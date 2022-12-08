@@ -7,3 +7,8 @@ Useful notes
 https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-features-to-a-devcontainer-file
 https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/introduction-to-dev-containers#creating-a-custom-dev-container-configuration
 
+## Getting Started
+
+  `npm install`
+  
+  `npm run dev`
