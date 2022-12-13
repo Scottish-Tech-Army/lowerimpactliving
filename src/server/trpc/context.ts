@@ -4,6 +4,8 @@ import { type Session } from "next-auth";
 
 import { getServerAuthSession } from "../common/get-server-auth-session";
 
+import { organisation } from "../../../database/entities/organisation";
+
 type CreateContextOptions = {
   session: Session | null;
 };
@@ -16,6 +18,8 @@ type CreateContextOptions = {
 export const createContextInner = async (opts: CreateContextOptions) => {
   return {
     session: opts.session,
+    entities: { organisation }
+
   };
 };
 

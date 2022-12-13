@@ -9,6 +9,7 @@ https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/int
 
 ## Getting Started
 
-  `npm install`
-  
-  `npm run dev`
+  - `npm install`
+  - create `.env` see `.env.example`
+  - `npm run docker:up`
+  - `npm run dev`
