@@ -11,5 +11,5 @@ https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/int
 
   - `npm install`
   - create `.env` see `.env.example`
-  - `npm run docker:up`
-  - `npm run dev`
+  - `npm run docker:up` open in new terminal
+  - `npm run dev`open in different terminal
