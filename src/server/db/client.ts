@@ -1,10 +1,11 @@
 import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
+import { env } from "../../env/server.mjs";
 
 export const DB_CLIENT = new DynamoDBClient({
     credentials: {
-        accessKeyId: process.env.AWS_ACCESS_KEY!,
-        secretAccessKey: process.env.AWS_SECRET_KEY!,
+        accessKeyId: env.LIL_AWS_ACCESS_KEY!,
+        secretAccessKey: env.LIL_AWS_SECRET_KEY!,
     },
-    region: process.env.AWS_REGION,
-    endpoint: process.env.AWS_DYNAMODB_ENDPOINT
+    region: env.LIL_AWS_REGION,
+    endpoint: env.LIL_AWS_DYNAMODB_ENDPOINT
 });
