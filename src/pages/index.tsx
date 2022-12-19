@@ -33,7 +33,7 @@ const Home: NextPage = () => {
                 <h2 className="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
                   Low Impact<span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-600"> Living</span>
                 </h2>
-                <h3 className='text-xl md:text-3xl mt-10'>Coming Soon</h3>
+                <h3 className='text-xl md:text-3xl mt-10'>Coming Soonish</h3>
                 {
                   !mutation.data?.data.email ?
                     hasError ?
