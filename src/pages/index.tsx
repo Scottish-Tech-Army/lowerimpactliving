@@ -1,6 +1,7 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 import { useId, useState } from "react";
+// import { AuthShowcase } from "../components/auth-showcase";
 import { trpc } from "../utils/trpc";
 
 const Home: NextPage = () => {
@@ -30,6 +31,7 @@ const Home: NextPage = () => {
         <header className="bg-teal px-6 py-8 shadow-xl grid grid-cols-1 md:grid-cols-2 gap-6 ">
           <a href="#" className="logo w-60 h-26 overflow-hidden block bg-white rounded-xl border-8 border-light-blue hover:bg-teal indent-96 ease-in-out duration-200">Logo</a>
           <nav className="text-right p-6">
+            {/* <AuthShowcase/> */}
             <a href="#" className="bg-white px-4 py-2 rounded-md mr-4 hover:bg-light-blue hover:text-white ease-in-out duration-200">Sign up</a>
             <a href="#" className="bg-white px-4 py-2 rounded-md mr-4 hover:bg-light-blue hover:text-white ease-in-out duration-200">Log in</a>
             <input type="text" placeholder="Search products" className="bg-white px-4 py-2 rounded-md mr-4" />
@@ -62,7 +64,7 @@ const Home: NextPage = () => {
             ['images/lines-2147453__340.jpg', 'Featured product 5', '/products/product5'],
             ['images/green-72772__340.jpg', 'Featured product 6', '/products/product6'],
           ].map(([featuredImage, featuredProduct, featuredUrl]) => (
-            <a href={featuredUrl} className="rounded-b-xl shadow-xl block hover:underline hover:text-teal ease-in-out duration-200 hover:scale-105">
+            <a key={featuredProduct} href={featuredUrl} className="rounded-b-xl shadow-xl block hover:underline hover:text-teal ease-in-out duration-200 hover:scale-105">
               <img className="" src={featuredImage} alt={featuredProduct} />
               <span className="p-6 block rounded-y ">{featuredProduct}</span>
             </a>
@@ -96,7 +98,7 @@ const Home: NextPage = () => {
             ['images/building-rubble-2816007__340.jpg', 'Discover Product 5', '/products/product5'],
             ['images/pipes-8106__340.jpg', 'Discover Product 6', '/products/product6'],
           ].map(([discoverImage, discoverProduct, discoverUrl]) => (
-            <a href={discoverUrl} className="rounded-b-xl shadow-xl block hover:underline hover:text-teal ease-in-out duration-200 hover:scale-105">
+            <a key={discoverProduct} href={discoverUrl} className="rounded-b-xl shadow-xl block hover:underline hover:text-teal ease-in-out duration-200 hover:scale-105">
               <img className="" src={discoverImage} alt={discoverProduct} />
               <span className="p-6 block rounded-y ">{discoverProduct}</span>
             </a>
@@ -107,30 +109,30 @@ const Home: NextPage = () => {
             {[
               ['Link 1', '/dashboard'],
               ['Link 2', '/team'],
-              ['Link 2', '/projects'],
+              ['Link 3', '/projects'],
               ['Link 4', '/reports'],
             ].map(([title, url]) => (
-              <a href={url} className="block hover:underline hover:text-teal ease-in-out duration-200">{title}</a>
+              <a key={title} href={url} className="block hover:underline hover:text-teal ease-in-out duration-200">{title}</a>
             ))}
           </nav>
           <nav className="px-6">
             {[
-              ['Link 1', '/dashboard'],
-              ['Link 2', '/team'],
-              ['Link 2', '/projects'],
-              ['Link 4', '/reports'],
+              ['Link 5', '/dashboard'],
+              ['Link 6', '/team'],
+              ['Link 7', '/projects'],
+              ['Link 8', '/reports'],
             ].map(([title, url]) => (
-              <a href={url} className="block hover:underline hover:text-teal ease-in-out duration-200">{title}</a>
+              <a key={title} href={url} className="block hover:underline hover:text-teal ease-in-out duration-200">{title}</a>
             ))}
           </nav>
           <nav className="px-6">
             {[
-              ['Link 1', '/dashboard'],
-              ['Link 2', '/team'],
-              ['Link 2', '/projects'],
-              ['Link 4', '/reports'],
+              ['Link 9', '/dashboard'],
+              ['Link 10', '/team'],
+              ['Link 11', '/projects'],
+              ['Link 12', '/reports'],
             ].map(([title, url]) => (
-              <a href={url} className="block hover:underline hover:text-teal ease-in-out duration-200">{title}</a>
+              <a key={title} href={url} className="block hover:underline hover:text-teal ease-in-out duration-200">{title}</a>
             ))}
           </nav>
         </footer>
