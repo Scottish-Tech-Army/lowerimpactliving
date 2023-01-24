@@ -1,15 +1,15 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 import { useId, useState } from "react";
-// import { AuthShowcase } from "../components/auth-showcase";
-import { trpc } from "../utils/trpc";
+import { AuthShowcase } from "../components/auth-showcase";
+import { api } from "../utils/api";
 
 const Home: NextPage = () => {
   const id = useId();
   const [emailInput, setInput] = useState('');
   const [hasError, setHasError] = useState(false);
 
-  const mutation = trpc.organisation.create.useMutation({
+  const mutation = api.organisation.create.useMutation({
     onError(error) {
       setHasError(true);
     }
@@ -31,9 +31,8 @@ const Home: NextPage = () => {
         <header className="bg-teal px-6 py-8 shadow-xl grid grid-cols-1 md:grid-cols-2 gap-6 ">
           <a href="#" className="logo w-60 h-26 overflow-hidden block bg-white rounded-xl border-8 border-light-blue hover:bg-teal indent-96 ease-in-out duration-200">Logo</a>
           <nav className="text-right p-6">
-            {/* <AuthShowcase/> */}
-            <a href="#" className="bg-white px-4 py-2 rounded-md mr-4 hover:bg-light-blue hover:text-white ease-in-out duration-200">Sign up</a>
-            <a href="#" className="bg-white px-4 py-2 rounded-md mr-4 hover:bg-light-blue hover:text-white ease-in-out duration-200">Log in</a>
+            <AuthShowcase/>
+           
             <input type="text" placeholder="Search products" className="bg-white px-4 py-2 rounded-md mr-4" />
           </nav>
         </header>

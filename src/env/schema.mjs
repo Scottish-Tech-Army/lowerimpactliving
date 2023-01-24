@@ -23,8 +23,33 @@ export const serverSchema = z.object({
   LIL_AWS_REGION: z.string(),
   LIL_AWS_ACCESS_KEY: z.string(),
   LIL_AWS_SECRET_KEY: z.string(),
-  LIL_AWS_DYNAMODB_ENDPOINT: z.string()
+  LIL_AWS_DYNAMODB_ENDPOINT: z.string(),
+  COGNITO_CLIENT_ID:z.string(),
+  COGNITO_CLIENT_SECRET: z.string(),
+  COGNITO_ISSUER:z.string(),
+  COGNITO_LOGOUT_URL:z.string()
 });
+
+/**
+ * You can't destruct `process.env` as a regular object in the Next.js
+ * middleware, so you have to do it manually here.
+ * @type {{ [k in keyof z.infer<typeof serverSchema>]: z.infer<typeof serverSchema>[k] | undefined }}
+ */
+export const serverEnv = {
+  NODE_ENV: process.env.NODE_ENV,
+  NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
+  NEXTAUTH_URL: process.env.NEXTAUTH_URL,
+  DISCORD_CLIENT_ID: process.env.DISCORD_CLIENT_ID,
+  DISCORD_CLIENT_SECRET: process.env.DISCORD_CLIENT_SECRET,
+  LIL_AWS_REGION: process.env.LIL_AWS_REGION,
+  LIL_AWS_ACCESS_KEY: process.env.LIL_AWS_ACCESS_KEY,
+  LIL_AWS_SECRET_KEY: process.env.LIL_AWS_SECRET_KEY,
+  LIL_AWS_DYNAMODB_ENDPOINT: process.env.LIL_AWS_DYNAMODB_ENDPOINT,
+  COGNITO_CLIENT_ID: process.env.COGNITO_CLIENT_ID,
+  COGNITO_CLIENT_SECRET: process.env.COGNITO_CLIENT_SECRET,
+  COGNITO_ISSUER: process.env.COGNITO_ISSUER,
+  COGNITO_LOGOUT_URL: process.env.COGNITO_LOGOUT_URL 
+};
 
 /**
  * Specify your client-side environment variables schema here.

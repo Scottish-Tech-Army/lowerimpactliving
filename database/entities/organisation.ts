@@ -1,5 +1,5 @@
 import { ElectroEvent, Entity } from "electrodb";
-import { DB_CLIENT } from "../../src/server/db/client";
+import { DB_CLIENT } from "../client";
 import { TABLE_NAME } from "../table";
 
 // const logger = (event: ElectroEvent) => {
