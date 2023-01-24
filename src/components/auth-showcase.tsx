@@ -9,13 +9,12 @@ export const AuthShowcase: React.FC = () => {
   //   { enabled: session?.user !== undefined }
   // );
   if (session) {
- 
     return (
       <>
         <span className="signed-in text-white mr-8">Signed in as {session?.user?.name}</span>
         <button
           className="mr-4 rounded-md bg-white px-4 py-2 duration-200 ease-in-out hover:bg-light-blue hover:text-white"
-          onClick={() => signOut({ callbackUrl: "signOut" })}
+          onClick={() => void signOut({ callbackUrl: "signOut" })}
         >
           Sign out
         </button>
@@ -26,7 +25,7 @@ export const AuthShowcase: React.FC = () => {
     <>
       <button 
         className="px-3 py-2 mr-4 bg-dark-blue rounded-lg border-2 border-white text-white hover:bg-dark-blue/50 hover:text-white ease-in-out duration-200"
-        onClick={() => signIn("cognito")}
+        onClick={() => void signIn("cognito")}
       >
         <UserIcon className="h-6 w-6 text-white inline-block mr-2"/>
         Sign in / Register
