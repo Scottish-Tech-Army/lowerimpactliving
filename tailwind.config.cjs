@@ -10,8 +10,8 @@ module.exports = {
         'light-green': '#8abc25',
         'dark-blue': '#016ab1',
         'light-blue': '#006fb7',
-        'teal': '#029f9e',
-        'pink': '#f10180',
+        'teal': '#004c4c',
+        'pink': '#f10180',  
         'orange': '#ec5c0d',
         'red': '#e73121',
         'grey': '#696c74',
@@ -20,6 +20,9 @@ module.exports = {
       },
       dropShadow: {
         '3xl': '0 35px 35px rgba(0, 0, 0, 1)',
+      },
+      padding: {
+        'pad': '58px',
       }
     },
   },
