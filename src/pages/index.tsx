@@ -31,7 +31,7 @@ const Home: NextPage = () => {
       </Head>
       <main>
         {/* Header */}
-        <header className="bg-teal px-6 py-3 shadow-xl ">
+        <header className="header bg-teal px-6 py-3 shadow-xl ">
           <div className="container mx-auto grid grid-cols-12 gap-6">
             <a href="#" className="col-span-2 hover:bg-white/25 border-4 border-white rounded-lg ease-in-out duration-200 block p-1 pt-2">
               {/* <img src="images/icons/synchronize.svg" title="synchronize.svg" className="h-8 w-8 mr-4 text-center float-left ml-5" /> */}
@@ -48,23 +48,34 @@ const Home: NextPage = () => {
           </div>
         </header>
 
-        {/* Main content wrapper */}
-        <div className="container mx-auto">
-
-          {/* Hero */}
-          <section className="hero bg-white my-8 p-8 shadow-xl grid grid-cols-1 md:grid-cols-2 gap-8 rounded-md">
-            <div>
-              <h1 className="text-4xl mb-8 font-semibold">Hero header</h1>
+        <div className="welcome container mx-auto">
+            <div className="p-24">
+              <h1 className="text-6xl mb-8 font-bold">Hero header</h1>
               <p className="text-xl mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum gravida molestie libero, ac mattis ante mollis pharetra. Phasellus ornare ipsum venenatis diam lobortis, sit amet imperdiet nisi hendrerit. Duis et dui aliquam, pulvinar justo sed, congue elit. Nulla laoreet lobortis neque eu lacinia. Donec id tellus condimentum, aliquet turpis ac, imperdiet nulla. Integer porta tristique efficitur. Aliquam luctus nisl sed ligula pellentesque condimentum. </p>
             </div>
-            <div>
-              <h1 className="text-4xl mb-8 text-white invisible">Search:</h1>
+        </div>
+
+        {/* Hero */}
+        <section className="hero">
+          {/* <img src="images/hero.jpg" title="synchronize.svg" className="w-full fixed top-0 left-0 right-0 z-0" /> */}
+          <div className="container mx-auto">
+            {/* <div className="z-1">
+              <h1 className="text-4xl mb-8 font-semibold">Hero header</h1>
+              <p className="text-xl mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum gravida molestie libero, ac mattis ante mollis pharetra. Phasellus ornare ipsum venenatis diam lobortis, sit amet imperdiet nisi hendrerit. Duis et dui aliquam, pulvinar justo sed, congue elit. Nulla laoreet lobortis neque eu lacinia. Donec id tellus condimentum, aliquet turpis ac, imperdiet nulla. Integer porta tristique efficitur. Aliquam luctus nisl sed ligula pellentesque condimentum. </p>
+            </div> */}
+            <div className="bg-white p-24 backdrop-opacity-80">
+              {/* <h1 className="text-4xl mb-8 mtext-white invisible">Search:</h1> */}
               <form className="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <input type="text" className="col-span-3 shadow-xl px-6 py-4 block rounded-md border" placeholder="eg. wooden panels" />
                 <input type="submit" value="Go" className="bg-teal text-white border border-teal font-bold px-8 py-4 block rounded-md ease-in-out duration-200 hover:bg-white hover:text-teal" />
               </form>
             </div>
-          </section>
+          </div>
+        </section>
+
+
+        {/* Main content wrapper */}
+        <div className="container mx-auto">
 
           {/* Featured products */}
           <h2 className="text-2xl px-8 py-4 border-b-4 border-teal font-semibold">Featured products</h2>
@@ -134,12 +145,12 @@ const Home: NextPage = () => {
               ))}
             </nav>
             <nav className="p-[pad] col-span-1">
-              <h2 className="text-lg font-semibold text-white border-b-2 border-white pb-2 mb-2">Contact us</h2>
+              <h2 className="text-lg font-semibold text-white border-b-2 border-white pb-2 mb-2">Get in touch</h2>
               {[
-                ['Link 5', '/dashboard'],
-                ['Link 6', '/team'],
-                ['Link 7', '/projects'],
-                ['Link 8', '/reports'],
+                ['Email', '/dashboard'],
+                ['Facebook', '/team'],
+                ['Twitter', '/projects'],
+                ['Discord', '/reports'],
               ].map(([title, url]) => (
                 <a key={title} href={url} className="block hover:underline text-white hover:text-white ease-in-out duration-200">{title}</a>
               ))}

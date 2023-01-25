@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.hero {
+    background: url('/images/hero.jpg') center center no-repeat;
+    background-size: cover;
+    height: 60vh;
+}
