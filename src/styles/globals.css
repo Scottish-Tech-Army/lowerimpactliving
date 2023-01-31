@@ -2,8 +2,83 @@
 @tailwind components;
 @tailwind utilities;
 
-.hero {
-    background: url('/images/hero.jpg') center center no-repeat;
-    background-size: cover;
-    height: 60vh;
+body {
+    font-family: 'Hind Siliguri', sans-serif;
 }
+
+h1 {
+    text-shadow: #000000 1px 0 10px;
+}
+
+h1 span {
+    text-shadow: #ffffff 1px 0 10px;
+}
+
+.welcome {
+    background: url('/images/hero-1.svg') 50% 89% no-repeat;
+    background-size: 120%;
+    position: relative;
+}
+
+.welcome .overlay:before {
+    background: teal;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.4;
+    z-index: 0;
+}
+
+.welcome .overlay > div {
+    position: relative;
+    z-index: 1;
+}
+
+.three-points a {
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    padding-top: 4em;
+    position: relative;
+}
+
+.three-points a span {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 10px;
+    color: black;
+    text-align: center;
+}
+
+.three-points a.point-1 {
+    background: url('/images/register-icon.jpg') center center no-repeat;
+    background-size: contain;
+}
+
+.three-points a.point-2 {
+    background: url('/images/swap-icon.jpg') center center no-repeat;
+    background-size: contain;
+}
+
+.three-points a.point-3 {
+    background: url('/images/shop-icon.jpg') center center no-repeat;
+    background-size: contain;
+}
+
+.three-points svg {
+    transform: scale(2.8);
+    margin: 0 0 25px;
+}
+
+.hero-search {
+    top: 6px;
+    margin-top: 0;
+    right: 7px;
+}
+
+/* need to look at https://nextjs.org/docs/api-reference/next/image for using images */
