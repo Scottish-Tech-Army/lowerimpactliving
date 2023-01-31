@@ -24,6 +24,12 @@ module.exports = {
         'primary4': '#100469',
         'primary5': '#B0A8F0',
       },
+      dropShadow: {
+        '3xl': '0 35px 35px rgba(0, 0, 0, 1)',
+      },
+      padding: {
+        'pad': '58px',
+      }
     },
   },
   plugins: [],
