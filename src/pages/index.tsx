@@ -32,7 +32,7 @@ const Home: NextPage = () => {
         <meta name="description" content="Low impact living" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap" rel="stylesheet" /> 
         <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;600&display=swap" rel="stylesheet"></link>
       </Head>
@@ -63,8 +63,8 @@ const Home: NextPage = () => {
               {/* <p className="text-xl mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum gravida molestie libero, ac mattis ante mollis pharetra. Phasellus ornare ipsum venenatis diam lobortis, sit amet imperdiet nisi hendrerit. Duis et dui aliquam, pulvinar justo sed, congue elit. Nulla laoreet lobortis neque eu lacinia. Donec id tellus condimentum, aliquet turpis ac, imperdiet nulla. Integer porta tristique efficitur. Aliquam luctus nisl sed ligula pellentesque condimentum. </p> */}
               <div className="relative">
                 <form className="grid grid-cols-1 md:grid-cols-12 gap-8 relative">
-                  <label for="main-search" className="text-3xl mb-2 col-span-2 p-6 font-bold text-white text-center">Search:</label>
-                  <input id="main-search" type="text" className="col-span-10 shadow-xl p-6 rounded-md rounded-full border" placeholder="eg. wooden panels" />
+                  <label className="text-3xl mb-2 col-span-2 p-6 font-bold text-white text-center">Search:</label>
+                  <input type="text" className="col-span-10 shadow-xl p-6 rounded-md rounded-full border" placeholder="eg. wooden panels" />
                   {/* <input type="submit" value="Go" className="bg-teal text-white border border-teal font-bold px-8 py-4 block rounded-md ease-in-out duration-200 hover:bg-white hover:text-teal" /> */}
                   <button className="hero-search rounded-full bg-primary3 w-20 h-20 absolute"><MagnifyingGlassIcon className="h-8 w-8 ml-2 text-white inline-block mr-2"/></button>
                 </form>
@@ -91,15 +91,15 @@ const Home: NextPage = () => {
           <h2 className="text-4xl text-primary6 font-light text-center">How does it work?</h2>
           <section className="three-points p-0 grid grid-cols-2 md:grid-cols-5 gap-8 mb-28">
             <div></div>
-            <a href="/" className="point-1 block bg-primary1 text-white hover:underline hover:text-white/70 ease-in-out duration-200 hover:scale-105 shadow-xl border-b-8 border-primary3 rounded-full">
+            <a href="#" className="point-1 block bg-primary1 text-white hover:underline hover:text-white/70 ease-in-out duration-200 hover:scale-105 shadow-xl border-b-8 border-primary3 rounded-full">
               {/* <UserPlusIcon className="h-8 w-8 ml-2 text-white inline-block mr-2"/> */}
               <span className="p-4 block rounded-y ">Sign up</span>
             </a>
-            <a href="/" className="point-2 block bg-primary1 text-white hover:underline hover:text-white/70 ease-in-out duration-200 hover:scale-105 shadow-xl border-b-8 border-primary3 rounded-full">
+            <a href="#" className="point-2 block bg-primary1 text-white hover:underline hover:text-white/70 ease-in-out duration-200 hover:scale-105 shadow-xl border-b-8 border-primary3 rounded-full">
               {/* <ArrowPathIcon className="h-8 w-8 ml-2 text-white inline-block mr-2"/> */}
               <span className="p-4 block rounded-y ">Swap</span>
             </a>
-            <a href="/" className="point-3 block bg-primary1 text-white hover:underline hover:text-white/70 ease-in-out duration-200 hover:scale-105 shadow-xl border-b-8 border-primary3 rounded-full">
+            <a href="#" className="point-3 block bg-primary1 text-white hover:underline hover:text-white/70 ease-in-out duration-200 hover:scale-105 shadow-xl border-b-8 border-primary3 rounded-full">
               {/* <ShoppingCartIcon className="h-8 w-8 ml-2 text-white inline-block mr-2"/> */}
               <span className="p-4 block rounded-y ">Shop</span>
             </a>
@@ -126,7 +126,7 @@ const Home: NextPage = () => {
 
           {/* Looking to sell products? */}
 
-          <section className="hero grid grid-cols-1 md:grid-cols-2 gap-8 border-4 border-teal p-8 rounded-xl  mb-16">
+          <section className="hero grid grid-cols-1 md:grid-cols-2 gap-8 border-4 border-teal p-8 rounded-xl mb-16">
             <div className="col-span-1">
               <img src="images/pallets.jpg" alt="Looking to sell?" />
             </div>
@@ -142,7 +142,7 @@ const Home: NextPage = () => {
             </div>
           </section>
 
-          <section className="hero bg-white my-8 p-8 shadow-xl grid grid-cols-1 md:grid-cols-4 gap-8 rounded-md">
+          {/* <section className="hero bg-white my-8 p-8 shadow-xl grid grid-cols-1 md:grid-cols-4 gap-8 rounded-md">
             <div className="col-span-1">
               <img src="images/tube-898660__340.jpg" alt="Looking to sell?" />
             </div>
@@ -155,22 +155,22 @@ const Home: NextPage = () => {
               <button className="w-3/5 bg-dark-blue text-white border border-dark-blue hover:bg-white font-bold px-8 py-4 block rounded-md border ease-in-out duration-200 hover:text-dark-blue mb-4">Sign up</button>
               <button className="w-3/5 bg-dark-green text-white border border-dark-green hover:bg-white font-bold px-8 py-4 block rounded-md border ease-in-out duration-200 hover:text-dark-blue ">Log in</button>
             </div>
-          </section>
+          </section> */}
 
           {/* Discover more */}
           <h2 className="text-4xl text-primary6  font-light text-center">Recent additions</h2>
-          <section className="p-8 grid grid-cols-2 md:grid-cols-6 gap-8 mb-24">
+          <section className="p-8 grid grid-cols-2 md:grid-cols-6 gap-8 mb-12">
             {[
-              ['images/lines-2147453__340.jpg', 'Discover Product 1', '/products/product1', '3'],
-              ['images/wetsuits-59112__340.jpg', 'Discover Product 2', '/products/product2', '5'],
-              ['images/green-72772__340.jpg', 'Discover Product 3', '/products/product3', '4'],
-              ['images/scrapyard-352912__340.jpg', 'Discover Product 4', '/products/product4', '5'],
-              ['images/building-rubble-2816007__340.jpg', 'Discover Product 5', '/products/product5', '4'],
-              ['images/pipes-8106__340.jpg', 'Discover Product 6', '/products/product6', '4'],
-            ].map(([discoverImage, discoverProduct, discoverUrl, rating]) => (
+              ['images/lines-2147453__340.jpg', 'Discover Product 1', '/products/product1'],
+              ['images/wetsuits-59112__340.jpg', 'Discover Product 2', '/products/product2'],
+              ['images/green-72772__340.jpg', 'Discover Product 3', '/products/product3'],
+              ['images/scrapyard-352912__340.jpg', 'Discover Product 4', '/products/product4'],
+              ['images/building-rubble-2816007__340.jpg', 'Discover Product 5', '/products/product5'],
+              ['images/pipes-8106__340.jpg', 'Discover Product 6', '/products/product6'],
+            ].map(([discoverImage, discoverProduct, discoverUrl]) => (
               <a key={discoverProduct} href={discoverUrl} className="rounded-b-md shadow-xl block hover:underline hover:text-teal ease-in-out duration-200 hover:scale-105">
                 <img className="" src={discoverImage} alt={discoverProduct} />
-                <span className="p-4 block rounded-y ">{discoverProduct} <Rating defaultValue={rating} color="teal" size="xs" /></span>
+                <span className="p-4 block rounded-y ">{discoverProduct}</span>
               </a>
             ))}
           </section>
