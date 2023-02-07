@@ -2,6 +2,14 @@
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    container: {
+      screens: {
+        // sm: '600px',
+        // md: '728px',
+        // lg: '984px',
+        xl: '1280px',
+      },
+    },
     extend: {
       colors: {
         'black': '#000000',
@@ -19,8 +27,8 @@ module.exports = {
         'light-grey': '#d3d3d3',
         'dark-grey': '#666666',
         'primary1': '#3B97A1',
-        'primary2': '#9CE7F0',
-        'primary3': '#F0B541',
+        'primary2': '#ED9DA3',
+        'primary3': '#71C9D4',
         'primary4': '#100469',
         'primary5': '#B0A8F0',
       },
@@ -29,7 +37,10 @@ module.exports = {
       },
       padding: {
         'pad': '58px',
-      }
+      },
+      maxWidth: {
+        '2220': '2220px',
+      },
     },
   },
   plugins: [],
