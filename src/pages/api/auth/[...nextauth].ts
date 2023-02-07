@@ -1,12 +1,13 @@
-import NextAuth, { LilUser, type NextAuthOptions } from "next-auth";
+import NextAuth, { type NextAuthOptions } from "next-auth";
 import CognitoProvider from "next-auth/providers/cognito";
 
 import { env } from "../../../env/server.mjs";
+import { LilCognitoProfile, LilUser } from "../../../types/next-auth.js";
 
 export const authOptions: NextAuthOptions = {
   // Include user.id on session
   callbacks: {
-    async jwt({ token, user }) {
+    jwt({ token, user }) {
       if (user) {
         token.user = user;
       }
@@ -36,7 +37,7 @@ export const authOptions: NextAuthOptions = {
   },
   // Configure one or more authentication providers
   providers: [
-    CognitoProvider({
+    CognitoProvider<LilCognitoProfile>({
       clientId: env.COGNITO_CLIENT_ID,
       clientSecret: env.COGNITO_CLIENT_SECRET,
       issuer: "https://cognito-idp.eu-west-1.amazonaws.com/eu-west-1_HfqGiICs1",

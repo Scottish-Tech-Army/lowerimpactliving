@@ -1,4 +1,5 @@
 import { type DefaultSession, type User } from "next-auth";
+import { CognitoProfile } from "next-auth/providers/cognito";
 
 declare module "next-auth" {
   /**
@@ -11,7 +12,12 @@ declare module "next-auth" {
     } & DefaultSession["user"];
   }
 
-  interface LilUser extends User {
-    username: string;
-  }
 }
+
+export interface LilUser extends User {
+  username: string;
+}
+export interface LilCognitoProfile extends CognitoProfile{
+  gender: string;
+    "cognito:username": string;
+} 
