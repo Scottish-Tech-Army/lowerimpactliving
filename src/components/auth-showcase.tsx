@@ -13,7 +13,7 @@ export const AuthShowcase: React.FC = () => {
     return (
       <>
         <section className="relative inline-block">
-          <Avatar className="absolute -left-12 shadow-lg text-primary2 inline-block" src="/images/avatar-1.jpg" alt="it's me" /> <span className="signed-in text-black/70 mr-8">Signed in as {session?.user?.name}</span>
+          <Avatar className="absolute -left-12 shadow-lg text-primary2 inline-block" src="/images/avatar-1.jpg" alt="it's me" /> <span className="signed-in text-black/70 mr-8">Signed in as {session?.user?.username}</span>
           <button
             className="mr-4 rounded-md bg-primary3 px-4 py-2 duration-200 ease-in-out hover:bg-primary1 hover:text-white"
             onClick={() => void signOut({ callbackUrl: "signOut" })}
