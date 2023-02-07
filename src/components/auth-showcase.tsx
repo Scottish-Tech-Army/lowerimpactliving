@@ -11,7 +11,8 @@ export const AuthShowcase: React.FC = () => {
   if (session) {
     return (
       <>
-          <button onClick={() => void signOut({ callbackUrl: "signOut" })} className="hover:bg-white/100 rounded-lg ease-in-out duration-200 block p-3 text-primary1">
+      <span className="inline-block signed-in text-black/70 mr-8">Signed in as {session?.user?.username}</span>
+          <button onClick={() => void signOut({ callbackUrl: "signOut" })} className="inline-block hover:bg-white/100 rounded-lg ease-in-out duration-200 block p-3 text-primary1">
             <UserIcon className="h-8 w-8 -mt-1 ml-4 text-primary1 inline-block mr-2 mt-2 sm:mt-0"/>
             <span className="p-1 pt-1 inline-block text-lg text-primary1 font-bold hidden sm:inline-block ">Sign out</span>
           </button>
