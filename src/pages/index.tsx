@@ -2,10 +2,10 @@ import { type NextPage } from "next";
 import Head from "next/head";
 import { useId, useState } from "react";
 import { AuthShowcase } from "../components/auth-showcase";
-import { api } from "../utils/api";;
+import { api } from "../utils/api";
 
 import { 
-  ArrowPathIcon, MagnifyingGlassIcon, ShoppingCartIcon, UserPlusIcon,
+  ArrowPathIcon, MagnifyingGlassIcon,
  } from '@heroicons/react/24/solid';
 
 const Home: NextPage = () => {
@@ -112,8 +112,8 @@ const Home: NextPage = () => {
             </div>
             <div>
             <h2 className="text-2xl md:text-4xl text-primary6 font-light mb-2 text-center md:text-left">What do customers think?</h2>
-            <p className="text-lg md:text-xl text-primary6 font-light mb-4 text-center md:text-left"><span className="inline mr-4 font-bold text-primary1">"</span><i>Donec consectetur gravida est at vestibulum. Cras pellentesque purus a pretium venenatis. Fusce accumsan tempor orci, nec egestas nunc. Integer accumsan dictum dui, sit amet facilisis eros congue eget. Duis accumsan dolor orci, vitae vestibulum enim euismod et.</i><span className="inline ml-4 font-bold text-primary1">"</span><span className="block font-bold mt-2 text-center md:text-left">Martin Jones</span></p>
-            <p className="text-lg md:text-xl text-primary6 font-light mb-4 text-center md:text-left"><span className="inline mr-4 font-bold text-primary1">"</span><i>Praesent egestas odio vulputate tempus auctor. Fusce scelerisque, massa eu elementum dignissim, urna lectus molestie odio, et varius mauris quam in leo. Pellentesque vehicula tempor nulla, a semper metus consectetur quis. Nunc ut dignissim eros, sed euismod eros.</i><span className="inline ml-4 font-bold text-primary1">"</span><span className="block font-bold mt-2 text-center md:text-left">Jane Stevens</span></p>
+            <p className="text-lg md:text-xl text-primary6 font-light mb-4 text-center md:text-left"><span className="inline mr-4 font-bold text-primary1">&quot;</span><i>Donec consectetur gravida est at vestibulum. Cras pellentesque purus a pretium venenatis. Fusce accumsan tempor orci, nec egestas nunc. Integer accumsan dictum dui, sit amet facilisis eros congue eget. Duis accumsan dolor orci, vitae vestibulum enim euismod et.</i><span className="inline ml-4 font-bold text-primary1">&quot;</span><span className="block font-bold mt-2 text-center md:text-left">Martin Jones</span></p>
+            <p className="text-lg md:text-xl text-primary6 font-light mb-4 text-center md:text-left"><span className="inline mr-4 font-bold text-primary1">&quot;</span><i>Praesent egestas odio vulputate tempus auctor. Fusce scelerisque, massa eu elementum dignissim, urna lectus molestie odio, et varius mauris quam in leo. Pellentesque vehicula tempor nulla, a semper metus consectetur quis. Nunc ut dignissim eros, sed euismod eros.</i><span className="inline ml-4 font-bold text-primary1">&quot;</span><span className="block font-bold mt-2 text-center md:text-left">Jane Stevens</span></p>
             </div>
           </section>
 
@@ -121,15 +121,15 @@ const Home: NextPage = () => {
           <h2 className="text-2xl mb-6 md:text-4xl text-primary6 font-light text-center">Recent additions</h2>
           <section className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-4">
             {[
-              ['images/lines-2147453__340.jpg', 'Discover Product 1', '/products/product1'],
-              ['images/wetsuits-59112__340.jpg', 'Discover Product 2', '/products/product2'],
-              ['images/green-72772__340.jpg', 'Discover Product 3', '/products/product3'],
-              ['images/scrapyard-352912__340.jpg', 'Discover Product 4', '/products/product4'],
-              ['images/building-rubble-2816007__340.jpg', 'Discover Product 5', '/products/product5'],
-              ['images/pipes-8106__340.jpg', 'Discover Product 6', '/products/product6'],
+              ["images/lines-2147453__340.jpg", "Discover Product 1", "/products/product1"],
+              ["images/wetsuits-59112__340.jpg", "Discover Product 2", "/products/product2"],
+              ["images/green-72772__340.jpg", "Discover Product 3", "/products/product3"],
+              ["images/scrapyard-352912__340.jpg", "Discover Product 4", "/products/product4"],
+              ["images/building-rubble-2816007__340.jpg", "Discover Product 5", "/products/product5"],
+              ["images/pipes-8106__340.jpg", "Discover Product 6", "/products/product6"],
             ].map(([discoverImage, discoverProduct, discoverUrl]) => (
               <a key={discoverProduct} href={discoverUrl} className="grid grid-cols-2 md:grid-cols-1 rounded-b-md shadow-xl block hover:underline hover:text-teal ease-in-out duration-200 hover:scale-105">
-                <img className="" src={discoverImage} alt={discoverProduct} />
+                <img src={discoverImage} alt={discoverProduct} />
                 <span className="p-4 block rounded-y ">{discoverProduct}</span>
               </a>
             ))}
