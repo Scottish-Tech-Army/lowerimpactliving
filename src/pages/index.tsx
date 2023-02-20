@@ -34,17 +34,15 @@ const Home: NextPage = () => {
 
         {/* Header */}
         
-        <header className="header px-6 py-3 bg-white shadow-md">
-          <div className="container mx-auto grid grid-cols-12 gap-6">
-            <a href="#" className="logo col-span-2 hover:bg-teal/25 border-4 border-white rounded-lg ease-in-out duration-200 block p-1 pt-2 text-primary1">
-              <ArrowPathIcon className="h-8 w-8 -mt-1 ml-4 text-primary1 inline-block mr-2"/>
-              <span className=" p-1 pt-0.5 inline-block text-lg text-darkteal bold">Waste Swap</span>
-            </a>
-            {/* <form className="col-span-7 block relative">
-              <input type="text" placeholder="Search products" className="border-4 block bg-white p-3 rounded-3xl mr-4 w-full" />
-              <input type="submit" value="Go" className="rounded-3xl absolute top-1 right-1 bg-mustard p-3 px-4 text-white font-bold"/>
-            </form> */}
-            <nav className="col-span-10 text-right p-1 pt-2">
+        <header className="header bg-white shadow-md">
+          <div className="container px-6 py-3 mx-auto grid grid-cols-12 gap-6">
+            <div className="col-span-6">
+              <a href="#" className="float-left logo hover:bg-teal/25 border-4 border-white rounded-lg ease-in-out duration-200 block p-2 mt-1 text-primary1">
+                <ArrowPathIcon className="h-8 w-8 -mt-1 text-primary1 inline-block mr-2"/>
+                <span className=" p-1 pt-0.5 inline-block text-lg text-darkteal bold">Waste Swap</span>
+              </a>
+            </div>
+            <nav className="float-right text-right p-1 pt-3 col-span-6">
               <AuthShowcase/>
             </nav>
           </div>
@@ -88,19 +86,6 @@ const Home: NextPage = () => {
           </div>
         </div>
 
-        {/* Hero */}
-        {/* <section className="hero mb-36 bg-primary3">
-          <div className="container mx-auto">
-            <div className="p-24 relative">
-              <form className="grid grid-cols-1 md:grid-cols-12 gap-8">
-                <h1 className="text-3xl mb-2 col-span-2 p-6 font-bold text-white">Search:</h1>
-                <input type="text" className="col-span-10 shadow-xl p-6 rounded-md rounded-r-full border" placeholder="eg. wooden panels" />
-                <button className="hero-search rounded-full bg-primary1 w-20 h-20 absolute"><MagnifyingGlassIcon className="h-8 w-8 ml-2 text-white inline-block mr-2"/></button>
-              </form>
-            </div>
-          </div>
-        </section> */}
-
         {/* Main content wrapper */}
         <div className="container mx-auto shadow-2xl bg-white p-24">
           <h2 className="text-4xl mb-0 md:mb-8 text-primary6 font-medium text-center">What is Waste Swap?</h2>
@@ -128,8 +113,8 @@ const Home: NextPage = () => {
           </div>
 
           {/* Featured products */}
-          {/* <h2 className="text-2xl px-8 py-4 border-b-4 border-teal font-semibold">Featured products</h2>
-          <section className="p-8 grid grid-cols-2 md:grid-cols-6 gap-8">
+          {/* <h2 className="text-2xl md:text-4xl text-primary6  font-light text-center">Featured products</h2>
+          <section className="p-0 pt-4 py-8 grid grid-cols-1 md:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-4">
             {[
               ['images/pipes-8106__340.jpg', 'Featured product 1', '/products/product1'],
               ['images/wetsuits-59112__340.jpg', 'Featured product 2', '/products/product2'],
@@ -138,7 +123,7 @@ const Home: NextPage = () => {
               ['images/lines-2147453__340.jpg', 'Featured product 5', '/products/product5'],
               ['images/green-72772__340.jpg', 'Featured product 6', '/products/product6'],
             ].map(([featuredImage, featuredProduct, featuredUrl]) => (
-              <a key={featuredProduct} href={featuredUrl} className="rounded-b-md shadow-xl block hover:underline hover:text-teal ease-in-out duration-200 hover:scale-105">
+              <a key={featuredProduct} href={featuredUrl} className="grid grid-cols-2 md:grid-cols-1 rounded-b-md shadow-xl block hover:underline hover:text-teal ease-in-out duration-200 hover:scale-105">
                 <img className="" src={featuredImage} alt={featuredProduct} />
                 <span className="p-4 block rounded-y ">{featuredProduct}</span>
               </a>
@@ -208,9 +193,9 @@ const Home: NextPage = () => {
         </div>
 
         {/* Footer */}
-        <footer className="mt-0 bg-white px-24">
-          <div className="container mx-auto p-8 grid grid-cols-2 md:grid-cols-3 text-darkteal gap-12">
-            <nav className="p-[pad] col-span-1">
+        <footer className="mt-0 bg-white ">
+          <div className="container mx-auto px-24 py-8 grid grid-cols-2 md:grid-cols-3 text-darkteal gap-12">
+            <nav className="col-span-1">
               <h2 className="text-lg font-semibold border-b-2 border-teal pb-2 mb-2">About Low Impact</h2>
               {[
                 ['Link 1', '/dashboard'],
@@ -221,7 +206,7 @@ const Home: NextPage = () => {
                 <a key={title} href={url} className="block hover:underline ease-in-out duration-200">{title}</a>
               ))}
             </nav>
-            <nav className="p-[pad] col-span-1">
+            <nav className="col-span-1">
               <h2 className="text-lg font-semibold border-b-2 border-teal pb-2 mb-2">Get in touch</h2>
               {[
                 ['Email', '/dashboard'],
@@ -232,7 +217,7 @@ const Home: NextPage = () => {
                 <a key={title} href={url} className="block hover:underline ease-in-out duration-200">{title}</a>
               ))}
             </nav>
-            <nav className="p-[pad] col-span-1">
+            <nav className="col-span-1">
             <h2 className="text-lg font-semibold border-b-2 border-teal pb-2 mb-2">More</h2>
             {[
                 ['Link 9', '/dashboard'],
@@ -243,9 +228,9 @@ const Home: NextPage = () => {
                 <a key={title} href={url} className="block hover:underline ease-in-out duration-200">{title}</a>
               ))}
             </nav>
-            <nav className="p-[pad] col-span-1">
+            {/* <nav className="col-span-1">
 
-            </nav>
+            </nav> */}
           </div>
         </footer>
       </main>

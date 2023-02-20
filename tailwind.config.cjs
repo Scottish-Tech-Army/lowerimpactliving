@@ -36,9 +36,6 @@ module.exports = {
       dropShadow: {
         '3xl': '0 35px 35px rgba(0, 0, 0, 1)',
       },
-      padding: {
-        'pad': '58px',
-      },
       maxWidth: {
         '2220': '2220px',
       },

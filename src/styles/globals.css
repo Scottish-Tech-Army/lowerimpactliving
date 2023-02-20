@@ -69,8 +69,8 @@ body {
     height: 200px;
     width: 200px;
     text-align: center;
-    padding-top: 4em;
-    position: relative;
+    /* padding-top: 4em; */
+    /* position: relative; */
 }
 
 /* .three-points a span {
@@ -97,11 +97,11 @@ body {
     background: url('/images/undraw_shopping_bags_4clo.svg') center 20px no-repeat;
     background-size: 94%;
 }
-
+/* 
 .three-points svg {
     transform: scale(2.8);
     margin: 0 0 25px;
-}
+} */
 
 /* need to look at https://nextjs.org/docs/api-reference/next/image for using images */
 
