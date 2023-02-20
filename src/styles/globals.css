@@ -7,6 +7,11 @@ body {
     background: #163642;
 }
 
+.header {
+    position: relative;
+    z-index: 100;
+}
+
 /* Logo */
 
 .logo {
@@ -79,18 +84,18 @@ body {
 } */
 
 .three-points a.point-1 {
-    background: url('/images/register-icon.jpg') center -29px no-repeat;
-    background-size: cover;
+    background: url('/images/undraw_authentication_re_svpt.svg') center center no-repeat;
+    background-size: 60%;
 }
 
 .three-points a.point-2 {
-    background: url('/images/swap-icon.jpg') center -29px no-repeat;
-    background-size: cover;
+    background: url('/images/undraw_collaborating_re_l43g.svg') center 32px no-repeat;
+    background-size: 80%;
 }
 
 .three-points a.point-3 {
-    background: url('/images/shop-icon.jpg') center -23px no-repeat;
-    background-size: cover;
+    background: url('/images/undraw_shopping_bags_4clo.svg') center 20px no-repeat;
+    background-size: 94%;
 }
 
 .three-points svg {
@@ -99,3 +104,18 @@ body {
 }
 
 /* need to look at https://nextjs.org/docs/api-reference/next/image for using images */
+
+.hero-swap {
+    background: url('/images/undraw_deliveries_2r4y.svg') center center no-repeat;
+    background-size: 80% 80%;
+}
+
+.hero-story {
+    background: url('/images/undraw_ideas_flow_re_bmea.svg') center center no-repeat;
+    background-size: 80% 80%;
+}
+
+.hero-start {
+    background: url('/images/undraw_going_up_re_86kg.svg') center center no-repeat;
+    background-size: 80% 80%;
+}

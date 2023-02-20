@@ -34,11 +34,11 @@ const Home: NextPage = () => {
 
         {/* Header */}
         
-        <header className="header px-6 py-3 shadow bg-white mb-12">
+        <header className="header px-6 py-3 bg-white shadow-md">
           <div className="container mx-auto grid grid-cols-12 gap-6">
-            <a href="#" className="logo bg-white col-span-2 hover:bg-teal/25 border-4 border-white rounded-lg ease-in-out duration-200 block p-1 pt-2 text-primary1">
+            <a href="#" className="logo col-span-2 hover:bg-teal/25 border-4 border-white rounded-lg ease-in-out duration-200 block p-1 pt-2 text-primary1">
               <ArrowPathIcon className="h-8 w-8 -mt-1 ml-4 text-primary1 inline-block mr-2"/>
-              <span className=" p-1 pt-0.5 inline-block text-lg text-primary1 bold">Waste Swap</span>
+              <span className=" p-1 pt-0.5 inline-block text-lg text-darkteal bold">Waste Swap</span>
             </a>
             {/* <form className="col-span-7 block relative">
               <input type="text" placeholder="Search products" className="border-4 block bg-white p-3 rounded-3xl mr-4 w-full" />
@@ -50,10 +50,19 @@ const Home: NextPage = () => {
           </div>
         </header>
 
-        <div className="container mx-auto shadow-2xl bg-white p-24">
-          <h1 className="text-5xl text-primary6 font-light text-center">Welcome to Waste Swap</h1>
-          <h3 className="text-4xl pt-6 text-primary6 font-light text-primary1 text-center">Swap | Buy | Sell</h3>
+        {/* <div className="container mx-auto shadow-2xl bg-white p-24"> */}
+        <div className="bg-white">
+          <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 ">
+            <div className="py-24 px-7 text-center md:text-left">
+              <h1 className="text-5xl text-dardteal font-medium">Welcome to Waste Swap</h1>
+              <p className="text-2xl pt-3 font-light text-dardteal mt-4">Aliquam laoreet aliquet pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus ut tortor nec lectus pharetra finibus.</p>
+              <p className="text-2xl pt-6 font-light text-primary1">Buy | Swap | Sell</p>
+            </div>
+            <div className="hero-swap p-56">
+            </div>
+          </div>
         </div>
+        {/* </div> */}
 
         <div className="hero bg-primary1/70 text-center shadow-xl">
           <div className=" max-w-[2220px] mx-auto">
@@ -94,26 +103,26 @@ const Home: NextPage = () => {
 
         {/* Main content wrapper */}
         <div className="container mx-auto shadow-2xl bg-white p-24">
-          <h2 className="text-4xl mb-0 md:mb-8 text-primary6 font-light text-center">What is Waste Swap?</h2>
+          <h2 className="text-4xl mb-0 md:mb-8 text-primary6 font-medium text-center">What is Waste Swap?</h2>
           <p className="text-xl">Donec consectetur gravida est at vestibulum. Cras pellentesque purus a pretium venenatis. Fusce accumsan tempor orci, nec egestas nunc. Integer accumsan dictum dui, sit amet facilisis eros congue eget. Duis accumsan dolor orci, vitae vestibulum enim euismod et.</p>
 
         </div>
 
         <div className="container mx-auto shadow-2xl bg-white">
           <div className="bg-primary3/20 p-24">
-            <h2 className="text-4xl mb-0 md:mb-8 text-primary6 font-light text-center">How does it work?</h2>
+            <h2 className="text-4xl mb-0 md:mb-8 text-primary6 font-medium text-center">How does it work?</h2>
             <section className="three-points md:grid md:grid-cols-3 md:gap-8 md:place-content-evenly max-w-full md:max-w-full lg:max-w-4xl mx-auto">
                 <a href="#" className="point-1 scale-75 md:scale-100 overflow-hidden -mb-6 md:mb-0 mx-auto text-white ease-in-out duration-200 hover:scale-105 shadow-xl border-8 border-primary1/70 rounded-full">
                   {/* <UserPlusIcon className="h-8 w-8 ml-2 text-white inline-block mr-2"/> */}
-                  <em className="text-xl font-bold px-1 py-2 bg-primary1/70 text-white absolute bottom-0 left-0 right-0">Sign up</em>
+                  <span className="text-xl font-medium px-1 py-2 bg-primary1/70 text-white absolute bottom-0 left-0 right-0">Register</span>
                 </a>
                 <a href="#" className="point-2 scale-75 md:scale-100 overflow-hidden -mb-6 md:mb-0 mx-auto text-white ease-in-out duration-200 hover:scale-105 shadow-xl border-8 border-primary1/70 rounded-full">
                   {/* <ArrowPathIcon className="h-8 w-8 ml-2 text-white inline-block mr-2"/> */}
-                  <em className="text-xl font-bold px-1 py-2 bg-primary1/70 text-white absolute bottom-0 left-0 right-0">Swap</em>
+                  <span className="text-xl font-medium px-1 py-2 bg-primary1/70 text-white absolute bottom-0 left-0 right-0">Swap</span>
                 </a>
                 <a href="#" className="point-3 scale-75 md:scale-100 overflow-hidden -mb-6 md:mb-0 mx-auto text-white ease-in-out duration-200 hover:scale-105 shadow-xl border-8 border-primary1/70 rounded-full">
                   {/* <ShoppingCartIcon className="h-8 w-8 ml-2 text-white inline-block mr-2"/> */}
-                  <em className="text-xl font-bold px-1 py-2 bg-primary1/70 text-white absolute bottom-0 left-0 right-0">Shop</em>
+                  <span className="text-xl font-medium px-1 py-2 bg-primary1/70 text-white absolute bottom-0 left-0 right-0">Shop</span>
                 </a>
             </section>
           </div>
@@ -139,11 +148,10 @@ const Home: NextPage = () => {
           {/* Looking to sell products? */}
 
           <section className="grid grid-cols-1 md:grid-cols-2">
-            {/* <div>
-              <img src="images/pallets.jpg" className="w-full" alt="Looking to sell?" />
-            </div> */}
+            <div className="hero-story p-56">
+            </div>
             <div className="p-24">
-              <h2 className="text-4xl text-primary6 font-light mb-8">What's the story behind Waste Swap?</h2>
+              <h2 className="text-4xl text-primary6 font-medium mb-8">What's the story behind Waste Swap?</h2>
               <p className="text-xl text-primary6 font-light mb-4">Nulla at pharetra lacus, eget efficitur orci. Integer ut neque in tellus rhoncus commodo sit amet quis orci.</p>
               <p className="text-xl text-primary6 font-light mb-4">Donec consectetur gravida est at vestibulum. Cras pellentesque purus a pretium venenatis. Fusce accumsan tempor orci, nec egestas nunc. Integer accumsan dictum dui, sit amet facilisis eros congue eget. Duis accumsan dolor orci, vitae vestibulum enim euismod et.</p>
               <p className="text-xl text-primary6 font-light mb-4">Praesent egestas odio vulputate tempus auctor. Fusce scelerisque, massa eu elementum dignissim, urna lectus molestie odio, et varius mauris quam in leo. Pellentesque vehicula tempor nulla, a semper metus consectetur quis. Nunc ut dignissim eros, sed euismod eros. </p>
@@ -162,7 +170,7 @@ const Home: NextPage = () => {
                 // ['images/building-rubble-2816007__340.jpg', 'Discover Product 5', '/products/product5'],
                 // ['images/pipes-8106__340.jpg', 'Discover Product 6', '/products/product6'],
               ].map(([discoverImage, discoverProduct, discoverUrl]) => (
-                <a key={discoverProduct} href={discoverUrl} className="rounded-b-md shadow-xl block hover:underline hover:text-teal ease-in-out duration-200 hover:scale-105">
+                <a key={discoverProduct} href={discoverUrl} className="rounded-b-md shadow-xl block hover:underline hover:text-darkteal ease-in-out duration-200 hover:scale-105">
                   <img className="" src={discoverImage} alt={discoverProduct} />
                   <span className="p-4 block rounded-y text-center">{discoverProduct}</span>
                 </a>
@@ -172,13 +180,14 @@ const Home: NextPage = () => {
 
           {/* Ready to sign up? */}
           <section className="grid grid-cols-1 md:grid-cols-2 mb-12">
-            <div>
-            </div>
+
             <div className="p-24">
               <h2 className="text-4xl text-primary6 font-light mb-8">Ready to get started?</h2>
               <p className="text-xl text-primary6 font-light mb-8">Nulla at pharetra lacus, eget efficitur orci. Integer ut neque in tellus rhoncus commodo sit amet quis orci.</p>
               <button className="w-3/5 bg-dark-blue text-white border border-dark-blue hover:bg-white font-bold px-8 py-4 block rounded-md border ease-in-out duration-200 hover:text-dark-blue mb-4">Sign up</button>
               <button className="w-3/5 bg-dark-green text-white border border-dark-green hover:bg-white font-bold px-8 py-4 block rounded-md border ease-in-out duration-200 hover:text-dark-blue ">Log in</button>
+            </div>
+            <div className="hero-start p-56">
             </div>
           </section>
 
@@ -199,39 +208,39 @@ const Home: NextPage = () => {
         </div>
 
         {/* Footer */}
-        <footer className="mt-0 bg-primary1/70">
-          <div className="container mx-auto p-8 grid grid-cols-2 md:grid-cols-3 gap-12">
+        <footer className="mt-0 bg-white px-24">
+          <div className="container mx-auto p-8 grid grid-cols-2 md:grid-cols-3 text-darkteal gap-12">
             <nav className="p-[pad] col-span-1">
-              <h2 className="text-lg font-semibold text-white border-b-2 border-white pb-2 mb-2">About Low Impact</h2>
+              <h2 className="text-lg font-semibold border-b-2 border-teal pb-2 mb-2">About Low Impact</h2>
               {[
                 ['Link 1', '/dashboard'],
                 ['Link 2', '/team'],
                 ['Link 3', '/projects'],
                 ['Link 4', '/reports'],
               ].map(([title, url]) => (
-                <a key={title} href={url} className="block hover:underline text-white hover:text-white ease-in-out duration-200">{title}</a>
+                <a key={title} href={url} className="block hover:underline ease-in-out duration-200">{title}</a>
               ))}
             </nav>
             <nav className="p-[pad] col-span-1">
-              <h2 className="text-lg font-semibold text-white border-b-2 border-white pb-2 mb-2">Get in touch</h2>
+              <h2 className="text-lg font-semibold border-b-2 border-teal pb-2 mb-2">Get in touch</h2>
               {[
                 ['Email', '/dashboard'],
                 ['Facebook', '/team'],
                 ['Twitter', '/projects'],
                 ['Discord', '/reports'],
               ].map(([title, url]) => (
-                <a key={title} href={url} className="block hover:underline text-white hover:text-white ease-in-out duration-200">{title}</a>
+                <a key={title} href={url} className="block hover:underline ease-in-out duration-200">{title}</a>
               ))}
             </nav>
             <nav className="p-[pad] col-span-1">
-            <h2 className="text-lg font-semibold text-white border-b-2 border-white pb-2 mb-2">More</h2>
+            <h2 className="text-lg font-semibold border-b-2 border-teal pb-2 mb-2">More</h2>
             {[
                 ['Link 9', '/dashboard'],
                 ['Link 10', '/team'],
                 ['Link 11', '/projects'],
                 ['Link 12', '/reports'],
               ].map(([title, url]) => (
-                <a key={title} href={url} className="block hover:underline text-white hover:text-white ease-in-out duration-200">{title}</a>
+                <a key={title} href={url} className="block hover:underline ease-in-out duration-200">{title}</a>
               ))}
             </nav>
             <nav className="p-[pad] col-span-1">

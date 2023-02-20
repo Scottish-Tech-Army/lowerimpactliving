@@ -31,6 +31,7 @@ module.exports = {
         'primary3': '#71C9D4',
         'primary4': '#100469',
         'primary5': '#B0A8F0',
+        'darkteal': '#163642',
       },
       dropShadow: {
         '3xl': '0 35px 35px rgba(0, 0, 0, 1)',
