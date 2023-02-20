@@ -136,7 +136,7 @@ const Home: NextPage = () => {
             <div className="hero-story p-56">
             </div>
             <div className="p-24">
-              <h2 className="text-4xl text-primary6 font-medium mb-8">What's the story behind Waste Swap?</h2>
+              <h2 className="text-4xl text-primary6 font-medium mb-8">What&rsquo;s the story behind Waste Swap?</h2>
               <p className="text-xl text-primary6 font-light mb-4">Nulla at pharetra lacus, eget efficitur orci. Integer ut neque in tellus rhoncus commodo sit amet quis orci.</p>
               <p className="text-xl text-primary6 font-light mb-4">Donec consectetur gravida est at vestibulum. Cras pellentesque purus a pretium venenatis. Fusce accumsan tempor orci, nec egestas nunc. Integer accumsan dictum dui, sit amet facilisis eros congue eget. Duis accumsan dolor orci, vitae vestibulum enim euismod et.</p>
               <p className="text-xl text-primary6 font-light mb-4">Praesent egestas odio vulputate tempus auctor. Fusce scelerisque, massa eu elementum dignissim, urna lectus molestie odio, et varius mauris quam in leo. Pellentesque vehicula tempor nulla, a semper metus consectetur quis. Nunc ut dignissim eros, sed euismod eros. </p>
