@@ -5,7 +5,7 @@ import { AuthShowcase } from "../components/auth-showcase";
 import { api } from "../utils/api";
 
 import { 
-  ArrowPathIcon, MagnifyingGlassIcon, ShoppingCartIcon, UserPlusIcon,
+  ArrowPathIcon, MagnifyingGlassIcon,
  } from '@heroicons/react/24/solid';
 
 const Home: NextPage = () => {
