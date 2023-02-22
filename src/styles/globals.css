@@ -4,85 +4,71 @@
 
 body {
     font-family: 'Hind Siliguri', sans-serif;
+    background: #163642;
 }
 
-h1 {
-    text-shadow: #000000 1px 0 10px;
-}
-
-h1 span {
-    text-shadow: #ffffff 1px 0 10px;
-}
-
-.welcome {
-    background: url('/images/hero-1.svg') 50% 89% no-repeat;
-    background-size: 120%;
+.header {
     position: relative;
+    z-index: 100;
 }
 
-.welcome .overlay:before {
-    background: teal;
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0.4;
-    z-index: 0;
+/* Logo */
+
+.logo {
+    transform: scale(1.3);
 }
 
-.welcome .overlay > div {
-    position: relative;
-    z-index: 1;
+/* Homepage search */
+
+.main-search label {
+    border-radius: 8px 0 0 8px;
+}
+
+.main-search input {
+    border-radius: 0 100px 100px 0;
+}
+
+.main-search button {
+    top: 10px;
+    right: 10px;
+    height: 66px;
+    width: 70px;
 }
 
 .three-points a {
-    /* height: 200px;
-    width: 200px; */
-    text-align: center;
-    /* padding-top: 4em; */
-    /* position: relative; */
-}
-
-.three-points span.image {
-    width: 200px;
     height: 200px;
-    display: inline-block;
+    width: 200px;
     text-align: center;
 }
 
-.three-points span.desc {
-    display: block;
-    clear: both;
+.three-points a.point-1 {
+    background: white url('/images/point-1.svg') center 23px no-repeat;
+    background-size: 55%;
 }
 
-.three-points a.point-1 .image {
-    background: url('/images/register-icon.jpg') center center no-repeat;
-    background-size: cover;
+.three-points a.point-2 {
+    background: white url('/images/point-2.svg') center 32px no-repeat;
+    background-size: 80%;
 }
 
-.three-points a.point-2 .image {
-    background: url('/images/swap-icon.jpg') center center no-repeat;
-    background-size: contain;
+.three-points a.point-3 {
+    background: white url('/images/point-3.svg') center 20px no-repeat;
+    background-size: 94%;
 }
 
-.three-points a.point-3 .image {
-    background: url('/images/shop-icon.jpg') center center no-repeat;
-    background-size: contain;
-}
-/* 
-.three-points svg {
-    transform: scale(2.8);
-    margin: 0 0 25px;
-} */
+/* need to look at https://nextjs.org/docs/api-reference/next/image for using images ? */
 
-.hero-search {
-    top: 0;
-    margin-top: 0;
-    right: 0;
-    height: 100%;
-    width: 6em;
+.hero-swap {
+    background: url('/images/hero-swap.svg') center center no-repeat;
+    background-size: 80% 80%;
 }
 
-/* need to look at https://nextjs.org/docs/api-reference/next/image for using images */
+.hero-story {
+    background: url('/images/hero-story.svg') center center no-repeat;
+    background-size: 80% 80%;
+}
+
+.hero-start {
+    background: url('/images/hero-start.svg') center center no-repeat;
+    background-size: 80% 80%;
+}

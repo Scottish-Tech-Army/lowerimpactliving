@@ -11,19 +11,26 @@ export const AuthShowcase: React.FC = () => {
   if (session) {
     return (
       <>
-      <span className="inline-block signed-in text-black/70 mr-8">Signed in as {session?.user?.username}</span>
-          <button onClick={() => void signOut({ callbackUrl: "signOut" })} className="inline-block hover:bg-white/100 rounded-lg ease-in-out duration-200 block p-3 text-primary1">
-            <UserIcon className="h-8 w-8 -mt-1 ml-4 text-primary1 inline-block mr-2 mt-2 sm:mt-0"/>
-            <span className="p-1 pt-1 inline-block text-lg text-primary1 font-bold hidden sm:inline-block ">Sign out</span>
+        <section className="relative inline-block">
+          <span className="signed-in text-black/70 mr-8">Signed in as {session?.user?.name}</span>
+          <button
+            className="mr-4 rounded-md bg-primary3 px-4 py-2 duration-200 ease-in-out hover:bg-primary1 hover:text-white"
+            onClick={() => void signOut({ callbackUrl: "signOut" })}
+          >
+            Sign out
           </button>
+        </section>
       </>
     );
   }
   return (
     <>
-      <button onClick={() => void signIn("cognito")} className="bg-primary1/10 hover:bg-primary1/20 mt-1 rounded-lg ease-in-out duration-200 block p-3 text-primary1">
-        <UserIcon className="h-8 w-8 -mt-1 ml-4 text-primary1 inline-block mr-2 mt-0 md:mt-0"/>
-        <span className="p-1 pt-1 inline-block text-lg text-primary1 font-bold hidden sm:inline-block">Sign in / Register</span>
+      <button
+        className="px-3 py-2 mr-4 bg-primary3 rounded-lg border-2 border-white text-white hover:bg-dark-blue/50 hover:text-white ease-in-out duration-200"
+        onClick={() => void signIn("cognito")}
+      >
+        <UserIcon className="h-6 w-6 text-white inline-block mr-2" />
+        Sign in / Register
       </button>
     </>
   );

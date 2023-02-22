@@ -29,151 +29,162 @@ const Home: NextPage = () => {
         <title>Low impact living</title>
         <meta name="description" content="Low impact living" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap" rel="stylesheet" /> 
-        <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;600&display=swap" rel="stylesheet"></link>
       </Head>
       <main className="bg-teal/25">
 
         {/* Header */}
-        <header className="header shadow">
-          <div className="container mx-auto h-20">
-            <a href="#" className="float-left col-span-2 bg-white/100 rounded hover:bg-white/70 ease-in-out duration-200 block p-5 text-primary1">
-              <ArrowPathIcon className="h-8 w-8 -mt-1 text-primary1 inline-block mr-2"/>
-              <span className="p-1 pt-1 inline-block text-lg text-primary1 font-bold text-2xl">WASTE SWAP</span>
-            </a>
-            <nav className="float-right p-1 pt-2">
+        
+        <header className="header bg-white shadow-md">
+          <div className="container px-6 py-3 mx-auto grid grid-cols-12 gap-6">
+            <div className="col-span-6">
+              <a href="#" className="float-left logo hover:bg-teal/25 border-4 border-white rounded-lg ease-in-out duration-200 block p-2 mt-1 text-primary1">
+                <ArrowPathIcon className="h-8 w-8 -mt-1 text-primary1 inline-block mr-2"/>
+                <span className=" p-1 pt-0.5 inline-block text-lg text-dark-teal bold">Waste Swap</span>
+              </a>
+            </div>
+            <nav className="float-right text-right p-1 pt-3 col-span-6">
               <AuthShowcase/>
             </nav>
           </div>
         </header>
 
-        {/* Hero */}
-        <div className="welcome bg-primary1">
-          <div className="overlay">
-            <div className=" py-8 md:py-12 lg:py-24 xl:py-32 px-4 md:px-6 lg:px-32 xl:px-52 block container mx-auto">
-              <h1 className="text-3xl md:text-5xl mb-8 font-light leading-normal text-center text-white">Welcome to <span className="text-white">Waste Swap</span>, a place to <span className="text-white inline-block">Buy</span> something, <span className="text-white inline-block">Sell</span> everything or <span className="text-white inline-block">Swap</span> anything.</h1>
+        {/* Welcome hero */}
+
+        <div className="bg-white">
+          <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 ">
+            <div className="py-24 px-7 text-center md:text-left">
+              <h1 className="text-5xl text-dardteal font-medium">Welcome to Waste Swap</h1>
+              <p className="text-2xl pt-3 font-light text-dardteal mt-4">Aliquam laoreet aliquet pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus ut tortor nec lectus pharetra finibus.</p>
+              <p className="text-2xl pt-6 font-light text-primary1">Buy | Swap | Sell</p>
+            </div>
+            <div className="hero-swap p-56">
+            </div>
+          </div>
+        </div>
+
+        {/* Search */}
+
+        <div className="bg-primary1/70 text-center shadow-xl">
+          <div className="max-w-[2220px] mx-auto">
+            <div className="overlay p-24 px-4 md:px-56 block container mx-auto">
               <div className="relative">
-                <form className="grid grid-cols-1 md:grid-cols-12 gap-8 relative">
-                  <label className="hidden md:inline-block text-3xl mb-2 col-span-2 p-6 font-bold text-white text-center">Search:</label>
-                  <input type="text" className="p-6 md:p-6 lg:p-6 col-span-10 shadow-xl p-6 rounded-md rounded-full border" placeholder="eg. wooden panels" />
-                  {/* <input type="submit" value="Go" className="bg-teal text-white border border-teal font-bold px-8 py-4 block rounded-md ease-in-out duration-200 hover:bg-white hover:text-teal" /> */}
-                  <button className="hero-search rounded-full bg-primary3 absolute"><MagnifyingGlassIcon className="h-8 w-8 ml-2 text-white inline-block mr-2"/></button>
+                <form className="main-search grid grid-cols-1 md:grid-cols-12 relative">
+                  <label className="text-3xl col-span-3 p-6 font-bold text-white text-center bg-white/40">Search:</label>
+                  <input type="text" className="text-3xl col-span-9 shadow-xl p-6 border" placeholder="eg. wooden panels" />
+                  <button className="rounded-full bg-primary1 absolute hover:bg-primary1/80 transition-all"><MagnifyingGlassIcon className="h-8 w-8 ml-2 text-white inline-block mr-2"/></button>
                 </form>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Main content wrapper */}
-        <div className="container mx-auto shadow-2xl bg-white p-8">
-          <h2 className="text-2xl mb-6 md:text-4xl text-primary6 font-light text-center">How does it work?</h2>
-          <section className="three-points p-0 grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 xl:mx-56 text-center">
-            <a href="#" className="point-1 grid grid-cols-2 sm:grid-cols-1 block text-white hover:underline hover:text-white/70 ease-in-out duration-200 hover:scale-105 rounded-full mx-auto">
-              {/* <UserPlusIcon className="h-8 w-8 ml-2 text-white inline-block mr-2"/> */}
-              <span className="image inline-block h-200 w-200 bg-primary1 rounded-full shadow-xl border-b-8 border-primary3 "></span>
-              <span className="desc pt-24 sm:pt-4 sm:p-4 block rounded-y text-primary1 text-xl font-bold">Sign up</span>
-            </a>
-            <a href="#" className="point-2 grid grid-cols-2 sm:grid-cols-1 block text-white hover:underline hover:text-white/70 ease-in-out duration-200 hover:scale-105 rounded-full mx-auto">
-              {/* <ArrowPathIcon className="h-8 w-8 ml-2 text-white inline-block mr-2"/> */}
-              <span className="image inline-block h-200 w-200 bg-primary1 rounded-full shadow-xl border-b-8 border-primary3 "></span>
-              <span className="desc pt-24 sm:pt-4 sm:p-4 block rounded-y text-primary1 text-xl font-bold">Swap</span>
-            </a>
-            <a href="#" className="point-3 grid grid-cols-2 sm:grid-cols-1 block text-white hover:underline hover:text-white/70 ease-in-out duration-200 hover:scale-105 rounded-full mx-auto">
-              {/* <ShoppingCartIcon className="h-8 w-8 ml-2 text-white inline-block mr-2"/> */}
-              <span className="image inline-block h-200 w-200 bg-primary1 rounded-full shadow-xl border-b-8 border-primary3 "></span>
-              <span className="desc pt-24 sm:pt-4 sm:p-4 block rounded-y text-primary1 text-xl font-bold">Shop</span>
-            </a>
-          </section>
+        {/* What is Waste Swap */}
 
-          {/* Featured products */}
-          {/* <h2 className="text-2xl md:text-4xl text-primary6  font-light text-center">Featured products</h2>
-          <section className="p-0 pt-4 py-8 grid grid-cols-1 md:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-4">
-            {[
-              ['images/pipes-8106__340.jpg', 'Featured product 1', '/products/product1'],
-              ['images/wetsuits-59112__340.jpg', 'Featured product 2', '/products/product2'],
-              ['images/building-rubble-2816007__340.jpg', 'Featured product 3', '/products/product3'],
-              ['images/scrapyard-352912__340.jpg', 'Featured product 4', '/products/product4'],
-              ['images/lines-2147453__340.jpg', 'Featured product 5', '/products/product5'],
-              ['images/green-72772__340.jpg', 'Featured product 6', '/products/product6'],
-            ].map(([featuredImage, featuredProduct, featuredUrl]) => (
-              <a key={featuredProduct} href={featuredUrl} className="grid grid-cols-2 md:grid-cols-1 rounded-b-md shadow-xl block hover:underline hover:text-teal ease-in-out duration-200 hover:scale-105">
-                <img className="" src={featuredImage} alt={featuredProduct} />
-                <span className="p-4 block rounded-y ">{featuredProduct}</span>
-              </a>
-            ))}
-          </section> */}
+        <div className="container mx-auto shadow-2xl bg-white p-24">
+          <h2 className="text-4xl mb-0 md:mb-8 text-primary6 font-medium text-center">What is Waste Swap?</h2>
+          <p className="text-xl">Donec consectetur gravida est at vestibulum. Cras pellentesque purus a pretium venenatis. Fusce accumsan tempor orci, nec egestas nunc. Integer accumsan dictum dui, sit amet facilisis eros congue eget. Duis accumsan dolor orci, vitae vestibulum enim euismod et.</p>
+        </div>
 
-          {/* What do customers think? */}
-          <section className="hero grid grid-cols-1 lg:grid-cols-2 gap-8 border-4 border-teal p-8 rounded-xl mb-6">
-            <div className="col-span-1">
-              <img src="images/customers.jpg" alt="Customer discussing with staff member" />
+        {/* How does it work? */}
+
+        <div className="container mx-auto shadow-2xl bg-white">
+          <div className="bg-primary3/20 p-24">
+            <h2 className="text-4xl mb-0 md:mb-8 text-primary6 font-medium text-center">How does it work?</h2>
+            <section className="three-points md:grid md:grid-cols-3 md:gap-8 md:place-content-evenly max-w-full md:max-w-full lg:max-w-4xl mx-auto">
+                <a href="#" className="point-1 scale-75 md:scale-100 overflow-hidden -mb-6 md:mb-0 mx-auto text-white ease-in-out duration-200 hover:scale-105 shadow-xl border-8 border-primary1/70 rounded-full">
+                  <span className="text-xl font-medium px-1 py-2 bg-primary1/70 text-white absolute bottom-0 left-0 right-0">Register</span>
+                </a>
+                <a href="#" className="point-2 scale-75 md:scale-100 overflow-hidden -mb-6 md:mb-0 mx-auto text-white ease-in-out duration-200 hover:scale-105 shadow-xl border-8 border-primary1/70 rounded-full">
+                  <span className="text-xl font-medium px-1 py-2 bg-primary1/70 text-white absolute bottom-0 left-0 right-0">Swap</span>
+                </a>
+                <a href="#" className="point-3 scale-75 md:scale-100 overflow-hidden -mb-6 md:mb-0 mx-auto text-white ease-in-out duration-200 hover:scale-105 shadow-xl border-8 border-primary1/70 rounded-full">
+                  <span className="text-xl font-medium px-1 py-2 bg-primary1/70 text-white absolute bottom-0 left-0 right-0">Shop</span>
+                </a>
+            </section>
+          </div>
+
+          {/* What's the story behind Waste Swap? */}
+
+          <section className="grid grid-cols-1 md:grid-cols-2">
+            <div className="hero-story p-56">
             </div>
-            <div>
-            <h2 className="text-2xl md:text-4xl text-primary6 font-light mb-2 text-center md:text-left">What do customers think?</h2>
-            <p className="text-lg md:text-xl text-primary6 font-light mb-4 text-center md:text-left"><span className="inline mr-4 font-bold text-primary1">&quot;</span><i>Donec consectetur gravida est at vestibulum. Cras pellentesque purus a pretium venenatis. Fusce accumsan tempor orci, nec egestas nunc. Integer accumsan dictum dui, sit amet facilisis eros congue eget. Duis accumsan dolor orci, vitae vestibulum enim euismod et.</i><span className="inline ml-4 font-bold text-primary1">&quot;</span><span className="block font-bold mt-2 text-center md:text-left">Martin Jones</span></p>
-            <p className="text-lg md:text-xl text-primary6 font-light mb-4 text-center md:text-left"><span className="inline mr-4 font-bold text-primary1">&quot;</span><i>Praesent egestas odio vulputate tempus auctor. Fusce scelerisque, massa eu elementum dignissim, urna lectus molestie odio, et varius mauris quam in leo. Pellentesque vehicula tempor nulla, a semper metus consectetur quis. Nunc ut dignissim eros, sed euismod eros.</i><span className="inline ml-4 font-bold text-primary1">&quot;</span><span className="block font-bold mt-2 text-center md:text-left">Jane Stevens</span></p>
+            <div className="p-24">
+              <h2 className="text-4xl text-primary6 font-medium mb-8">What&rsquo;s the story behind Waste Swap?</h2>
+              <p className="text-xl text-primary6 font-light mb-4">Nulla at pharetra lacus, eget efficitur orci. Integer ut neque in tellus rhoncus commodo sit amet quis orci.</p>
+              <p className="text-xl text-primary6 font-light mb-4">Donec consectetur gravida est at vestibulum. Cras pellentesque purus a pretium venenatis. Fusce accumsan tempor orci, nec egestas nunc. Integer accumsan dictum dui, sit amet facilisis eros congue eget. Duis accumsan dolor orci, vitae vestibulum enim euismod et.</p>
+              <p className="text-xl text-primary6 font-light mb-4">Praesent egestas odio vulputate tempus auctor. Fusce scelerisque, massa eu elementum dignissim, urna lectus molestie odio, et varius mauris quam in leo. Pellentesque vehicula tempor nulla, a semper metus consectetur quis. Nunc ut dignissim eros, sed euismod eros. </p>
             </div>
           </section>
 
-          {/* Discover more */}
-          <h2 className="text-2xl mb-6 md:text-4xl text-primary6 font-light text-center">Recent additions</h2>
-          <section className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-4">
-            {[
-              ["images/lines-2147453__340.jpg", "Discover Product 1", "/products/product1"],
-              ["images/wetsuits-59112__340.jpg", "Discover Product 2", "/products/product2"],
-              ["images/green-72772__340.jpg", "Discover Product 3", "/products/product3"],
-              ["images/scrapyard-352912__340.jpg", "Discover Product 4", "/products/product4"],
-              ["images/building-rubble-2816007__340.jpg", "Discover Product 5", "/products/product5"],
-              ["images/pipes-8106__340.jpg", "Discover Product 6", "/products/product6"],
-            ].map(([discoverImage, discoverProduct, discoverUrl]) => (
-              <a key={discoverProduct} href={discoverUrl} className="grid grid-cols-2 md:grid-cols-1 rounded-b-md shadow-xl block hover:underline hover:text-teal ease-in-out duration-200 hover:scale-105">
-                <img src={discoverImage} alt={discoverProduct} />
-                <span className="p-4 block rounded-y ">{discoverProduct}</span>
-              </a>
-            ))}
+          {/* What sort of thing is available? */}
+
+          <div className="bg-primary3/10 p-24">
+            <h2 className="text-4xl text-primary6 font-light text-center mb-12">What sort of thing is available?</h2>
+            <section className="grid grid-cols-2 md:grid-cols-4 gap-12">
+              {[
+                ['images/available-1.jpg', 'Lots of cable drums', '/products/product1'],
+                ['images/available-2.jpg', 'Various sized wetsuits', '/products/product2'],
+                ['images/available-3.jpg', 'Many drainage pipes', '/products/product3'],
+                ['images/available-4.jpg', 'Sections of fencing', '/products/product4'],
+              ].map(([discoverImage, discoverProduct, discoverUrl]) => (
+                <a key={discoverProduct} href={discoverUrl} className="rounded-b-md shadow-xl block hover:underline hover:text-dark-teal ease-in-out duration-200 hover:scale-105">
+                  <img className="" src={discoverImage} alt={discoverProduct} />
+                  <span className="p-4 block rounded-y text-center">{discoverProduct}</span>
+                </a>
+              ))}
+            </section>
+          </div>
+
+          {/* Ready to get started? */}
+
+          <section className="grid grid-cols-1 md:grid-cols-2 mb-12">
+            <div className="p-24">
+              <h2 className="text-4xl text-primary6 font-light mb-8">Ready to get started?</h2>
+              <p className="text-xl text-primary6 font-light mb-8">Nulla at pharetra lacus, eget efficitur orci. Integer ut neque in tellus rhoncus commodo sit amet quis orci.</p>
+              <button className="w-3/5 bg-dark-blue text-white border border-dark-blue hover:bg-white font-bold px-8 py-4 block rounded-md border ease-in-out duration-200 hover:text-dark-blue mb-4">Sign up</button>
+              <button className="w-3/5 bg-dark-green text-white border border-dark-green hover:bg-white font-bold px-8 py-4 block rounded-md border ease-in-out duration-200 hover:text-dark-blue ">Log in</button>
+            </div>
+            <div className="hero-start p-56">
+            </div>
           </section>
         </div>
 
         {/* Footer */}
-        <footer className="mt-0 bg-primary1">
-          <div className="container mx-auto p-8 grid grid-cols-0 sm:grid-cols-3 gap-8">
-            <nav className="p-[pad] col-span-1">
-              <h2 className="text-lg font-semibold text-white border-b-2 border-white pb-2 mb-2">About Low Impact</h2>
+
+        <footer className="mt-0 bg-white ">
+          <div className="container mx-auto px-24 py-8 grid grid-cols-2 md:grid-cols-3 text-dark-teal gap-12">
+            <nav className="col-span-1">
+              <h2 className="text-lg font-semibold border-b-2 border-teal pb-2 mb-2">About Low Impact</h2>
               {[
                 ['Link 1', '/dashboard'],
                 ['Link 2', '/team'],
                 ['Link 3', '/projects'],
                 ['Link 4', '/reports'],
               ].map(([title, url]) => (
-                <a key={title} href={url} className="block hover:underline text-white hover:text-white ease-in-out duration-200">{title}</a>
+                <a key={title} href={url} className="block hover:underline ease-in-out duration-200">{title}</a>
               ))}
             </nav>
-            <nav className="p-[pad] col-span-1">
-              <h2 className="text-lg font-semibold text-white border-b-2 border-white pb-2 mb-2">Get in touch</h2>
+            <nav className="col-span-1">
+              <h2 className="text-lg font-semibold border-b-2 border-teal pb-2 mb-2">Get in touch</h2>
               {[
                 ['Email', '/dashboard'],
                 ['Facebook', '/team'],
                 ['Twitter', '/projects'],
                 ['Discord', '/reports'],
               ].map(([title, url]) => (
-                <a key={title} href={url} className="block hover:underline text-white hover:text-white ease-in-out duration-200">{title}</a>
+                <a key={title} href={url} className="block hover:underline ease-in-out duration-200">{title}</a>
               ))}
             </nav>
-            <nav className="p-[pad] col-span-1">
-            <h2 className="text-lg font-semibold text-white border-b-2 border-white pb-2 mb-2">More</h2>
+            <nav className="col-span-1">
+            <h2 className="text-lg font-semibold border-b-2 border-teal pb-2 mb-2">More</h2>
             {[
                 ['Link 9', '/dashboard'],
                 ['Link 10', '/team'],
                 ['Link 11', '/projects'],
                 ['Link 12', '/reports'],
               ].map(([title, url]) => (
-                <a key={title} href={url} className="block hover:underline text-white hover:text-white ease-in-out duration-200">{title}</a>
+                <a key={title} href={url} className="block hover:underline ease-in-out duration-200">{title}</a>
               ))}
-            </nav>
-            <nav className="p-[pad] col-span-1">
-
             </nav>
           </div>
         </footer>
