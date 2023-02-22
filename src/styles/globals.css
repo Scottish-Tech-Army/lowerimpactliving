@@ -16,9 +16,6 @@ body {
 
 .logo {
     transform: scale(1.3);
-    /* position: absolute;
-    top: 0;
-    left: 50%; */
 }
 
 /* Homepage search */
@@ -38,84 +35,40 @@ body {
     width: 70px;
 }
 
-/* .logo .arrow-left {
-    transform: rotate(180deg);
-} */
-
-.welcome {
-    /* background: url('/images/tyres.jpg') top center no-repeat fixed; */
-    /* background-size: 100%  auto;*/
-    position: relative; 
-}
-/* 
-.welcome:before {
-    background: teal;
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0.2;
-    z-index: 0;
-} */
-
-/* .welcome .overlay {
-    position: relative;
-    z-index: 1;
-} */
-
 .three-points a {
     height: 200px;
     width: 200px;
     text-align: center;
-    /* padding-top: 4em; */
-    /* position: relative; */
 }
 
-/* .three-points a span {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    margin-top: 10px;
-    color: black;
-    text-align: center;
-} */
-
 .three-points a.point-1 {
-    background: url('/images/undraw_authentication_re_svpt.svg') center center no-repeat;
-    background-size: 60%;
+    background: white url('/images/point-1.svg') center 23px no-repeat;
+    background-size: 55%;
 }
 
 .three-points a.point-2 {
-    background: url('/images/undraw_collaborating_re_l43g.svg') center 32px no-repeat;
+    background: white url('/images/point-2.svg') center 32px no-repeat;
     background-size: 80%;
 }
 
 .three-points a.point-3 {
-    background: url('/images/undraw_shopping_bags_4clo.svg') center 20px no-repeat;
+    background: white url('/images/point-3.svg') center 20px no-repeat;
     background-size: 94%;
 }
-/* 
-.three-points svg {
-    transform: scale(2.8);
-    margin: 0 0 25px;
-} */
 
-/* need to look at https://nextjs.org/docs/api-reference/next/image for using images */
+/* need to look at https://nextjs.org/docs/api-reference/next/image for using images ? */
 
 .hero-swap {
-    background: url('/images/undraw_deliveries_2r4y.svg') center center no-repeat;
+    background: url('/images/hero-swap.svg') center center no-repeat;
     background-size: 80% 80%;
 }
 
 .hero-story {
-    background: url('/images/undraw_ideas_flow_re_bmea.svg') center center no-repeat;
+    background: url('/images/hero-story.svg') center center no-repeat;
     background-size: 80% 80%;
 }
 
 .hero-start {
-    background: url('/images/undraw_going_up_re_86kg.svg') center center no-repeat;
+    background: url('/images/hero-start.svg') center center no-repeat;
     background-size: 80% 80%;
 }
