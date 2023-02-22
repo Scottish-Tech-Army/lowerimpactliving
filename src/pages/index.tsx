@@ -39,7 +39,7 @@ const Home: NextPage = () => {
             <div className="col-span-6">
               <a href="#" className="float-left logo hover:bg-teal/25 border-4 border-white rounded-lg ease-in-out duration-200 block p-2 mt-1 text-primary1">
                 <ArrowPathIcon className="h-8 w-8 -mt-1 text-primary1 inline-block mr-2"/>
-                <span className=" p-1 pt-0.5 inline-block text-lg text-darkteal bold">Waste Swap</span>
+                <span className=" p-1 pt-0.5 inline-block text-lg text-dark-teal bold">Waste Swap</span>
               </a>
             </div>
             <nav className="float-right text-right p-1 pt-3 col-span-6">
@@ -64,14 +64,14 @@ const Home: NextPage = () => {
 
         {/* Search */}
 
-        <div className="hero bg-primary1/70 text-center shadow-xl">
-          <div className=" max-w-[2220px] mx-auto">
+        <div className="bg-primary1/70 text-center shadow-xl">
+          <div className="max-w-[2220px] mx-auto">
             <div className="overlay p-24 px-4 md:px-56 block container mx-auto">
               <div className="relative">
                 <form className="main-search grid grid-cols-1 md:grid-cols-12 relative">
-                  <label className="text-3xl col-span-3 p-6 font-bold text-white text-center bg-white/20">Search:</label>
+                  <label className="text-3xl col-span-3 p-6 font-bold text-white text-center bg-white/40">Search:</label>
                   <input type="text" className="text-3xl col-span-9 shadow-xl p-6 border" placeholder="eg. wooden panels" />
-                  <button className="hero-search rounded-full bg-primary1 absolute hover:bg-primary1/80 transition-all"><MagnifyingGlassIcon className="h-8 w-8 ml-2 text-white inline-block mr-2"/></button>
+                  <button className="rounded-full bg-primary1 absolute hover:bg-primary1/80 transition-all"><MagnifyingGlassIcon className="h-8 w-8 ml-2 text-white inline-block mr-2"/></button>
                 </form>
               </div>
             </div>
@@ -119,7 +119,7 @@ const Home: NextPage = () => {
           {/* What sort of thing is available? */}
 
           <div className="bg-primary3/10 p-24">
-          <h2 className="text-4xl text-primary6 font-light text-center mb-12">What sort of thing is available?</h2>
+            <h2 className="text-4xl text-primary6 font-light text-center mb-12">What sort of thing is available?</h2>
             <section className="grid grid-cols-2 md:grid-cols-4 gap-12">
               {[
                 ['images/available-1.jpg', 'Lots of cable drums', '/products/product1'],
@@ -127,7 +127,7 @@ const Home: NextPage = () => {
                 ['images/available-3.jpg', 'Many drainage pipes', '/products/product3'],
                 ['images/available-4.jpg', 'Sections of fencing', '/products/product4'],
               ].map(([discoverImage, discoverProduct, discoverUrl]) => (
-                <a key={discoverProduct} href={discoverUrl} className="rounded-b-md shadow-xl block hover:underline hover:text-darkteal ease-in-out duration-200 hover:scale-105">
+                <a key={discoverProduct} href={discoverUrl} className="rounded-b-md shadow-xl block hover:underline hover:text-dark-teal ease-in-out duration-200 hover:scale-105">
                   <img className="" src={discoverImage} alt={discoverProduct} />
                   <span className="p-4 block rounded-y text-center">{discoverProduct}</span>
                 </a>
@@ -152,7 +152,7 @@ const Home: NextPage = () => {
         {/* Footer */}
 
         <footer className="mt-0 bg-white ">
-          <div className="container mx-auto px-24 py-8 grid grid-cols-2 md:grid-cols-3 text-darkteal gap-12">
+          <div className="container mx-auto px-24 py-8 grid grid-cols-2 md:grid-cols-3 text-dark-teal gap-12">
             <nav className="col-span-1">
               <h2 className="text-lg font-semibold border-b-2 border-teal pb-2 mb-2">About Low Impact</h2>
               {[
