@@ -7,6 +7,7 @@ import { api } from "../utils/api";
 import { 
   ArrowPathIcon, MagnifyingGlassIcon,
  } from '@heroicons/react/24/solid';
+import { listing } from "../../database/entities/listing";
 
 const Home: NextPage = () => {
   const id = useId();
@@ -18,6 +19,8 @@ const Home: NextPage = () => {
       setHasError(true);
     }
   })
+
+  
 
   function registerBusiness() {
     mutation.mutate({ email: emailInput });

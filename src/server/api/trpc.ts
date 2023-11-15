@@ -38,7 +38,7 @@ type CreateContextOptions = {
 const createInnerTRPCContext = (opts: CreateContextOptions) => {
   return {
     session: opts.session,
-    entities: { organisation }
+    entities: { organisation, listing}
   };
 };
 
@@ -66,6 +66,7 @@ export const createTRPCContext = async (opts: CreateNextContextOptions) => {
  */
 import { initTRPC, TRPCError } from "@trpc/server";
 import superjson from "superjson";
+import { listing } from "../../../database/entities/listing";
 
 const t = initTRPC.context<typeof createTRPCContext>().create({
   transformer: superjson,
