@@ -1,0 +1,1 @@
+FROM jagregory/cognito-local:latest

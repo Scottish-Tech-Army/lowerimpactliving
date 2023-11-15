@@ -21,3 +21,20 @@ services:
       AWS_ACCESS_KEY_ID: LOCAL
       AWS_SECRET_ACCESS_KEY: LOCAL
       AWS_DEFAULT_REGION: eu-west-1
+
+  cognito: 
+    build:
+      context: .docker
+      dockerfile: cognito-local.Dockerfile
+    ports: 
+      - '9229:9229'
+    volumes:
+      - './.cognito:/app/.cognito'
+  cognito_init:
+    build:
+      context: .docker
+      dockerfile: init-cognito.Dockerfile
+    environment:
+      AWS_ACCESS_KEY_ID: LOCAL
+      AWS_SECRET_ACCESS_KEY: LOCAL
+      AWS_DEFAULT_REGION: eu-west-1

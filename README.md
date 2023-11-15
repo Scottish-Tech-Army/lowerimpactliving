@@ -8,8 +8,11 @@ https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/add
 https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/introduction-to-dev-containers#creating-a-custom-dev-container-configuration
 
 ## Getting Started
-
+  - Added cognito to allow a local run
   - `npm install`
   - create `.env` see `.env.example`
   - `npm run docker:up` open in new terminal
   - `npm run dev`open in different terminal
+
+
+cognito - "https://cognito-idp.eu-west-1.amazonaws.com/eu-west-1_HfqGiICs1"

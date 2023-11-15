@@ -40,7 +40,7 @@ export const authOptions: NextAuthOptions = {
     CognitoProvider<LilCognitoProfile>({
       clientId: env.COGNITO_CLIENT_ID,
       clientSecret: env.COGNITO_CLIENT_SECRET,
-      issuer: "https://cognito-idp.eu-west-1.amazonaws.com/eu-west-1_HfqGiICs1",
+      issuer: env.COGNITO_ISSUER,
       profile(profile) {
         return {
           id: profile.sub,

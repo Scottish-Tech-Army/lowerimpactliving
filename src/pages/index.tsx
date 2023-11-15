@@ -1,28 +1,18 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-import { useId, useState } from "react";
 import { AuthShowcase } from "../components/auth-showcase";
 import { api } from "../utils/api";
 
 import { 
   ArrowPathIcon, MagnifyingGlassIcon,
  } from '@heroicons/react/24/solid';
-
+ 
 const Home: NextPage = () => {
-  const id = useId();
-  const [emailInput, setInput] = useState('');
-  const [hasError, setHasError] = useState(false);
 
-  const mutation = api.organisation.create.useMutation({
-    onError(error) {
-      setHasError(true);
-    }
-  })
+  const listingFromApi = api.listing.hello.useQuery(); 
 
-  function registerBusiness() {
-    mutation.mutate({ email: emailInput });
-  }
-
+  console.log(listingFromApi.data)
+  
   return (
     <>
       <Head>
@@ -31,9 +21,9 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="bg-teal/25">
-
+        <div>
+        </div>
         {/* Header */}
-        
         <header className="header bg-white shadow-md">
           <div className="container px-6 py-3 mx-auto grid grid-cols-12 gap-6">
             <div className="col-span-6">
@@ -194,3 +184,11 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+function setError(err: any) {
+  throw new Error("Function not implemented.");
+}
+
+function setIsLoading(arg0: boolean) {
+  throw new Error("Function not implemented.");
+}
+

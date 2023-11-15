@@ -21,6 +21,7 @@ import { type Session } from "next-auth";
 
 import { getServerAuthSession } from "../auth";
 import { organisation } from "../../../database/entities/organisation";
+import { listing } from "../../../database/entities/listing";
 
 type CreateContextOptions = {
   session: Session | null;
@@ -38,7 +39,7 @@ type CreateContextOptions = {
 const createInnerTRPCContext = (opts: CreateContextOptions) => {
   return {
     session: opts.session,
-    entities: { organisation }
+    entities: { organisation, listing }
   };
 };
 
