@@ -4,12 +4,13 @@ import { v4 as uuid4 } from 'uuid';
 import { TABLE_NAME } from "../table";
 import { DB_CLIENT } from "../client";
 
-interface ListingInterface {
+export interface ListingInterface {
+    id: string,
+    condition: string;
     productName: string;
     description: string;
-    quantity: string; // Adjust the type accordingly
-    free: string;     // Adjust the type accordingly
-    price: string;    // Adjust the type accordingly
+    quantity: number; // Adjust the type accordingly
+    cost: number;     // Adjust the type accordingly
     shippingLocation: string;
     tags: string[];   // Adjust the type accordingly
   }

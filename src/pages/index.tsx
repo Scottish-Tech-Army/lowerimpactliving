@@ -20,7 +20,6 @@ const Home: NextPage = () => {
     }
   })
 
-  
 
   function registerBusiness() {
     mutation.mutate({ email: emailInput });
