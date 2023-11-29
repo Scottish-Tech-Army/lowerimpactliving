@@ -1,15 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ListingInterface } from '../../../../database/entities/listing';
-import { CreateListingForm } from './CreateListingForm';
+import { useRouter } from 'next/router';
 
 interface ListingGridProps {
   items: ListingInterface[];
 }
 
 const ListingsGrid: React.FC<ListingGridProps> = ({ items }) => {
+
+    const router = useRouter();
+
+    const handleRedirect = () => {
+        router.push('/createListings'); // Change this path to the actual path you want to redirect to
+    };
+
     return (
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {/* CreateListingForm component */}
+
+        <div className="bg-gray-200 p-4 rounded flex items-center justify-center">
+            <button onClick={handleRedirect} className="text-9xl font-bold ml-2">+</button>
+        </div>
+
+        {/* Create Listing Button */}
 
         {items.map((item) => (
             <div className="bg-gray-200 p-4 rounded" key={item.id}>

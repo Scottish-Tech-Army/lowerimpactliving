@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import { api } from '../../../utils/api';
+import { useRouter } from 'next/router';
 
 interface ListingFormProps {
     onFormInvalid: () => void;
-    onListingCreated: () => void; // Callback for when the listing is created
+    onListingCreated: () => void;
 }
 
 export const CreateListingForm: React.FC<ListingFormProps> = ({ onFormInvalid, onListingCreated }) => {
 
+    const router = useRouter();
+    
     const [formData, setFormData] = useState({
         productName: '',
         description: '',
@@ -53,6 +56,8 @@ export const CreateListingForm: React.FC<ListingFormProps> = ({ onFormInvalid, o
             onListingCreated();
         } catch (error) {
             console.error('Error creating listing:', error);
+        } finally {
+            router.push('/listings');
         }
     };
 
