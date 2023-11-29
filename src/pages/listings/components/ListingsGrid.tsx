@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ListingInterface } from '../../../../database/entities/listing';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 interface ListingGridProps {
   items: ListingInterface[];
@@ -24,13 +25,14 @@ const ListingsGrid: React.FC<ListingGridProps> = ({ items }) => {
         {/* Create Listing Button */}
 
         {items.map((item) => (
-            <div className="bg-gray-200 p-4 rounded" key={item.id}>
-            {/* Image placeholder */}
-            <div className="mb-4">
-                <img src="/images/available-2.jpg" alt="logo" className="w-full h-full object-cover" />
-            </div>
-            {/* Product details */}
-                <div>
+            <Link key={item.id} href={`/listing/${item.id}`} passHref>
+                <div className="bg-gray-200 p-4 rounded">
+                    {/* Image placeholder */}
+                    <div className="mb-4">
+                    <img src="/images/available-2.jpg" alt="logo" className="w-full h-full object-cover" />
+                    </div>
+                    {/* Product details */}
+                    <div>
                     <h2 className="text-2xl font-bold mb-2">{item.productName}</h2>
                     <p className="text-gray-700 mb-2">{item.description}</p>
 
@@ -40,17 +42,12 @@ const ListingsGrid: React.FC<ListingGridProps> = ({ items }) => {
                     </p>
 
                     {/* Additional properties */}
-                    <p className="text-sm">
-                        Shipping Location: {item.shippingLocation}
-                    </p>
-                    <p className="text-sm">
-                        Condition: {item.condition}
-                    </p>
-                    <p className="text-sm">
-                        Tags: {item.tags.join(', ')}
-                    </p>
+                    <p className="text-sm">Shipping Location: {item.shippingLocation}</p>
+                    <p className="text-sm">Condition: {item.condition}</p>
+                    <p className="text-sm">Tags: {item.tags.join(', ')}</p>
+                    </div>
                 </div>
-            </div>
+            </Link>
         ))}
         </div>
     );

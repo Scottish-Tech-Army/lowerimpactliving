@@ -20,8 +20,10 @@ export const listingRouter = createTRPCRouter({
   getAll: publicProcedure
             .query(async ({ ctx }) => await ctx.entities.listing.scan.go()),
   
+  getSingle: publicProcedure
+      .input(z.object({ id: z.string()}))
+      .query(async({ input, ctx }) => await ctx.entities.listing.get({
+        ...input, entryType: "listing"
+      }).go())
   
-  // getByProductName: publicProcedure
-  //   .input(z.object({ productName: z.string() }))
-  //   .query(async ({ input, ctx }) => await ctx.entities.listing.get({ productName: input. }).go()),
 });

@@ -1,13 +1,12 @@
 import { NextPage } from 'next';
 import Head from 'next/head';
 import React, { useEffect, useState } from 'react';
-import { CreateListingForm } from '../createListings/components/CreateListingForm';
 import { api } from '../../utils/api';
 import { ListingInterface } from '../../../database/entities/listing';
 import ListingsGrid from './components/ListingsGrid';
 
 
-const ListingPage: NextPage = () => {
+const ListingsPage: NextPage = () => {
   
   const [isFormValid, setIsFormValid] = useState(true);
   const [isListingCreated, setIsListingCreated] = useState(false);
@@ -58,5 +57,5 @@ const ListingPage: NextPage = () => {
   );
 };
 
-export default ListingPage;
+export default ListingsPage;
 

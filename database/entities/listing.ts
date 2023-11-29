@@ -28,6 +28,10 @@ export const listing = new Entity({
             default: uuid4(),
             required: true
         },
+        entryType: {
+            type: 'string', 
+            default: 'LISTING'
+        },
         productName: {
             type: 'string',
             required: true
@@ -62,7 +66,7 @@ export const listing = new Entity({
             sk: {
                 // highlight-next-line
                 field: 'sk',
-                composite: ['productName']
+                composite: ['entryType']
             }
         }
     }
