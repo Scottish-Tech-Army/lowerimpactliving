@@ -1,13 +1,12 @@
 import { NextPage } from 'next';
-import { api } from '../../utils/api';
-import { ListingInterface } from '../../../database/entities/listing';
+import { api } from '../../../utils/api';
+import { ListingInterface } from '../../../../database/entities/listing';
 import { useSearchParams } from 'next/navigation'
-import ListingDetails from './components/ListingDetails';
+import ListingDetails from '../components/ListingDetails';
 import Link from 'next/link';
 
-
 const ListingPage: NextPage = () => {
-  
+
   const searchParams = useSearchParams();
 
   const query_id = searchParams.get('id');
@@ -16,21 +15,21 @@ const ListingPage: NextPage = () => {
 
   const item = result.data?.data
   const singleListingData: ListingInterface | undefined = item ? {
-      id: item.id,
-      productName: item.productName,
-      description: item.description,
-      quantity: item.quantity || 0, // Example default value, adjust as needed
-      cost: item.cost || 0, // Example default value, adjust as needed
-      shippingLocation: item.shippingLocation || '',
-      condition: item.condition || '', // Example default value, adjust as needed
-      tags: item.tags || [], // Example default value, adjust as needed
-    }
-  : undefined;
+    id: item.id,
+    productName: item.productName,
+    description: item.description,
+    quantity: item.quantity || 0, // Example default value, adjust as needed
+    cost: item.cost || 0, // Example default value, adjust as needed
+    shippingLocation: item.shippingLocation || '',
+    condition: item.condition || '', // Example default value, adjust as needed
+    tags: item.tags || [], // Example default value, adjust as needed
+  }
+    : undefined;
 
   return (
     <div>
       {/* Display the image */}
-   
+
       {/* Display the ListingDetails component */}
       <div>
         {singleListingData ? (
@@ -49,4 +48,3 @@ const ListingPage: NextPage = () => {
 };
 
 export default ListingPage;
-
