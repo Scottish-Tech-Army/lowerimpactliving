@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ListingInterface } from '../../../../database/entities/listing';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import { api } from '../../../utils/api';
 
 interface ListingGridProps {
   items: ListingInterface[];
@@ -14,6 +15,27 @@ const ListingsGrid: React.FC<ListingGridProps> = ({ items }) => {
     const handleRedirect = () => {
         router.push('/createListings'); // Change this path to the actual path you want to redirect to
     };
+
+    const { mutate } = api.listing.deleteSingle.useMutation({
+        onError(error) {
+
+        }
+    });
+
+    const handleDelete = (itemId: string) => {
+
+        const transformedFormData = {
+            id: itemId
+        };
+
+
+
+        try {
+            mutate(transformedFormData); 
+        } finally {
+            router.push('/listings');
+        }
+    } 
 
     return (
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -45,6 +67,7 @@ const ListingsGrid: React.FC<ListingGridProps> = ({ items }) => {
                     <p className="text-sm">Shipping Location: {item.shippingLocation}</p>
                     <p className="text-sm">Condition: {item.condition}</p>
                     <p className="text-sm">Tags: {item.tags.join(', ')}</p>
+                    <button onClick={() => handleDelete(item.id)} className="text-4xl font-bold ml-2">-</button>
                     </div>
                 </div>
             </Link>

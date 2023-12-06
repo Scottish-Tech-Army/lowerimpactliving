@@ -24,6 +24,9 @@ export const listingRouter = createTRPCRouter({
       .input(z.object({ id: z.string()}))
       .query(async({ input, ctx }) => await ctx.entities.listing.get({
         ...input, entryType: "listing"
-      }).go())
-  
+      }).go()),
+    
+  deleteSingle: publicProcedure
+      .input(z.object({id: z.string()}))
+      .mutation(async ({ input, ctx }) => await ctx.entities.listing.delete({...input,  entryType: "listing"}).go())
 });
