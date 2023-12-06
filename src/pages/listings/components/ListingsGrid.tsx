@@ -28,12 +28,13 @@ const ListingsGrid: React.FC<ListingGridProps> = ({ items }) => {
             id: itemId
         };
 
-
-
         try {
             mutate(transformedFormData);
-        } finally {
-            router.push('/listings');
+        } catch {
+            console.error("error deleting listing")
+        }
+        finally {
+            router.reload();
         }
     }
 
@@ -67,10 +68,16 @@ const ListingsGrid: React.FC<ListingGridProps> = ({ items }) => {
                             <p className="text-sm">Shipping Location: {item.shippingLocation}</p>
                             <p className="text-sm">Condition: {item.condition}</p>
                             <p className="text-sm">Tags: {item.tags.join(', ')}</p>
-                            <button onClick={() => handleDelete(item.id)} className="text-4xl font-bold ml-2">-</button>
+
+                            {/* Delete Listing Button */}
+
+                            <button onClick={() => handleDelete(item.id)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                Delete Listing
+                            </button>
                         </div>
                     </div>
                 </Link>
+
             ))}
         </div>
     );
