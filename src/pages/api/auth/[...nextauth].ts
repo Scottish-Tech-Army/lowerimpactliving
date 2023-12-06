@@ -6,35 +6,35 @@ import { LilCognitoProfile, LilUser } from "../../../types/next-auth.js";
 
 export const authOptions: NextAuthOptions = {
   // Include user.id on session
-  callbacks: {
-    jwt({ token, user }) {
-      if (user) {
-        token.user = user;
-      }
-      return token;
-    },
-    session({ session, token }) {
-      if (session.user) {
-        session.user.id = token.sub!;
-        if (token.user) {
-          session.user.username = (token.user as LilUser).username;
-        }
-      }
-      return session;
-    },
-    redirect({ url, baseUrl }) {
-      if (url.startsWith(baseUrl)) return url;
-      if (url === "signOut") {
-        const logoutUrl = env.COGNITO_LOGOUT_URL;
-        const redirectUrl = process.env.NEXTAUTH_URL || "http://localhost:3000";
-        const signoutWithRedirectUrl = `${logoutUrl}?client_id=${env.COGNITO_CLIENT_ID}&logout_uri=${redirectUrl}`;
-        return signoutWithRedirectUrl;
-      }
-      // Allows relative callback URLs
-      if (url.startsWith("/")) return new URL(url, baseUrl).toString();
-      return baseUrl;
-    },
-  },
+  // callbacks: {
+  //   jwt({ token, user }) {
+  //     if (user) {
+  //       token.user = user;
+  //     }
+  //     return token;
+  //   },
+  //   session({ session, token }) {
+  //     if (session.user) {
+  //       session.user.id = token.sub!;
+  //       if (token.user) {
+  //         session.user.username = (token.user as LilUser).username;
+  //       }
+  //     }
+  //     return session;
+  //   },
+  //   redirect({ url, baseUrl }) {
+  //     if (url.startsWith(baseUrl)) return url;
+  //     if (url === "signOut") {
+  //       const logoutUrl = env.COGNITO_LOGOUT_URL;
+  //       const redirectUrl = process.env.NEXTAUTH_URL || "http://localhost:3000";
+  //       const signoutWithRedirectUrl = `${logoutUrl}?client_id=${env.COGNITO_CLIENT_ID}&logout_uri=${redirectUrl}`;
+  //       return signoutWithRedirectUrl;
+  //     }
+  //     // Allows relative callback URLs
+  //     if (url.startsWith("/")) return new URL(url, baseUrl).toString();
+  //     return baseUrl;
+  //   },
+  // },
   // Configure one or more authentication providers
   providers: [
     CognitoProvider<LilCognitoProfile>({
@@ -65,6 +65,8 @@ export const authOptions: NextAuthOptions = {
   // debug: true,
   pages: {
     // error: '/auth/error',
+    signIn: '/auth/signin',
+    newUser: '/auth/newUser',
   },
 };
 

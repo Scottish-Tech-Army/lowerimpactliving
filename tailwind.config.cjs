@@ -20,11 +20,12 @@ module.exports = {
         'teal': '#ADD9D4',
         'dark-teal': '#163642',
         'red': '#e73121',
-        'primary1': '#3B97A1',
-        'primary2': '#ED9DA3',
+        'primary1': '#036666',
+        'primary2': '#78C6A3',
         'primary3': '#71C9D4',
         'primary4': '#100469',
         'primary5': '#B0A8F0',
+        'input-bg': "#ffffff"
       },
       maxWidth: {
         '2220': '2220px',
