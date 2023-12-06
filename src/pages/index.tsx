@@ -4,11 +4,9 @@ import { useId, useState } from "react";
 import { AuthShowcase } from "../components/auth-showcase";
 import { api } from "../utils/api";
 
-import { 
+import {
   ArrowPathIcon, MagnifyingGlassIcon,
- } from '@heroicons/react/24/solid';
-import { listing } from "../../database/entities/listing";
-import { useRouter } from "next/router";
+} from '@heroicons/react/24/solid';
 
 const Home: NextPage = () => {
   const id = useId();
@@ -33,17 +31,17 @@ const Home: NextPage = () => {
       <main className="bg-teal/25">
 
         {/* Header */}
-        
+
         <header className="header bg-white shadow-md">
           <div className="container px-6 py-3 mx-auto grid grid-cols-12 gap-6">
             <div className="col-span-6">
               <a href="#" className="float-left logo hover:bg-teal/25 border-4 border-white rounded-lg ease-in-out duration-200 block p-2 mt-1 text-primary1">
-                <ArrowPathIcon className="h-8 w-8 -mt-1 text-primary1 inline-block mr-2"/>
+                <ArrowPathIcon className="h-8 w-8 -mt-1 text-primary1 inline-block mr-2" />
                 <span className=" p-1 pt-0.5 inline-block text-lg text-dark-teal bold">Waste Swap</span>
               </a>
             </div>
             <nav className="float-right text-right p-1 pt-3 col-span-6">
-              <AuthShowcase/>
+              <AuthShowcase />
             </nav>
           </div>
         </header>
@@ -89,7 +87,7 @@ const Home: NextPage = () => {
                 <form className="main-search grid grid-cols-1 md:grid-cols-12 relative">
                   <label className="text-3xl col-span-3 p-6 font-bold text-white text-center bg-white/40">Search:</label>
                   <input type="text" className="text-3xl col-span-9 shadow-xl p-6 border" placeholder="eg. wooden panels" />
-                  <button className="rounded-full bg-primary1 absolute hover:bg-primary1/80 transition-all"><MagnifyingGlassIcon className="h-8 w-8 ml-2 text-white inline-block mr-2"/></button>
+                  <button className="rounded-full bg-primary1 absolute hover:bg-primary1/80 transition-all"><MagnifyingGlassIcon className="h-8 w-8 ml-2 text-white inline-block mr-2" /></button>
                 </form>
               </div>
             </div>
@@ -109,15 +107,15 @@ const Home: NextPage = () => {
           <div className="bg-primary3/20 p-24">
             <h2 className="text-4xl mb-0 md:mb-8 text-primary6 font-medium text-center">How does it work?</h2>
             <section className="three-points md:grid md:grid-cols-3 md:gap-8 md:place-content-evenly max-w-full md:max-w-full lg:max-w-4xl mx-auto">
-                <a href="#" className="point-1 scale-75 md:scale-100 overflow-hidden -mb-6 md:mb-0 mx-auto text-white ease-in-out duration-200 hover:scale-105 shadow-xl border-8 border-primary1/70 rounded-full">
-                  <span className="text-xl font-medium px-1 py-2 bg-primary1/70 text-white absolute bottom-0 left-0 right-0">Register</span>
-                </a>
-                <a href="#" className="point-2 scale-75 md:scale-100 overflow-hidden -mb-6 md:mb-0 mx-auto text-white ease-in-out duration-200 hover:scale-105 shadow-xl border-8 border-primary1/70 rounded-full">
-                  <span className="text-xl font-medium px-1 py-2 bg-primary1/70 text-white absolute bottom-0 left-0 right-0">Swap</span>
-                </a>
-                <a href="#" className="point-3 scale-75 md:scale-100 overflow-hidden -mb-6 md:mb-0 mx-auto text-white ease-in-out duration-200 hover:scale-105 shadow-xl border-8 border-primary1/70 rounded-full">
-                  <span className="text-xl font-medium px-1 py-2 bg-primary1/70 text-white absolute bottom-0 left-0 right-0">Shop</span>
-                </a>
+              <a href="#" className="point-1 scale-75 md:scale-100 overflow-hidden -mb-6 md:mb-0 mx-auto text-white ease-in-out duration-200 hover:scale-105 shadow-xl border-8 border-primary1/70 rounded-full">
+                <span className="text-xl font-medium px-1 py-2 bg-primary1/70 text-white absolute bottom-0 left-0 right-0">Register</span>
+              </a>
+              <a href="#" className="point-2 scale-75 md:scale-100 overflow-hidden -mb-6 md:mb-0 mx-auto text-white ease-in-out duration-200 hover:scale-105 shadow-xl border-8 border-primary1/70 rounded-full">
+                <span className="text-xl font-medium px-1 py-2 bg-primary1/70 text-white absolute bottom-0 left-0 right-0">Swap</span>
+              </a>
+              <a href="#" className="point-3 scale-75 md:scale-100 overflow-hidden -mb-6 md:mb-0 mx-auto text-white ease-in-out duration-200 hover:scale-105 shadow-xl border-8 border-primary1/70 rounded-full">
+                <span className="text-xl font-medium px-1 py-2 bg-primary1/70 text-white absolute bottom-0 left-0 right-0">Shop</span>
+              </a>
             </section>
           </div>
 
@@ -194,8 +192,8 @@ const Home: NextPage = () => {
               ))}
             </nav>
             <nav className="col-span-1">
-            <h2 className="text-lg font-semibold border-b-2 border-teal pb-2 mb-2">More</h2>
-            {[
+              <h2 className="text-lg font-semibold border-b-2 border-teal pb-2 mb-2">More</h2>
+              {[
                 ['Link 9', '/dashboard'],
                 ['Link 10', '/team'],
                 ['Link 11', '/projects'],
