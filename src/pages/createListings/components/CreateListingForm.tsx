@@ -52,7 +52,7 @@ export const CreateListingForm: React.FC<ListingFormProps> = ({ onFormInvalid, o
                 tags: formData.tags.split(','),      // Convert the comma-separated string to an array
             };
 
-            await mutate(transformedFormData);
+            mutate(transformedFormData);
             onListingCreated();
         } catch (error) {
             console.error('Error creating listing:', error);
@@ -118,7 +118,7 @@ export const CreateListingForm: React.FC<ListingFormProps> = ({ onFormInvalid, o
                         </label>
                         <input
                             className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            type="text"
+                            type="number"
                             id="quantity"
                             name="quantity"
                             value={formData.quantity}
@@ -132,7 +132,7 @@ export const CreateListingForm: React.FC<ListingFormProps> = ({ onFormInvalid, o
                         </label>
                         <input
                             className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            type="text"
+                            type="number"
                             id="cost"
                             name="cost"
                             value={formData.cost}

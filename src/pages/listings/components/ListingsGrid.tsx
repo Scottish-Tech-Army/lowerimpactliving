@@ -28,12 +28,13 @@ const ListingsGrid: React.FC<ListingGridProps> = ({ items }) => {
             id: itemId
         };
 
-
-
         try {
             mutate(transformedFormData); 
-        } finally {
-            router.push('/listings');
+        } catch { 
+            console.error("error deleting listing")
+        }
+        finally {
+            router.reload();
         }
     } 
 
@@ -48,29 +49,35 @@ const ListingsGrid: React.FC<ListingGridProps> = ({ items }) => {
 
         {items.map((item) => (
             <Link key={item.id} href={`/listing/${item.id}`} passHref>
-                <div className="bg-gray-200 p-4 rounded">
-                    {/* Image placeholder */}
-                    <div className="mb-4">
-                    <img src="/images/available-2.jpg" alt="logo" className="w-full h-full object-cover" />
-                    </div>
-                    {/* Product details */}
-                    <div>
-                    <h2 className="text-2xl font-bold mb-2">{item.productName}</h2>
-                    <p className="text-gray-700 mb-2">{item.description}</p>
-
-                    {/* Display quantity and cost if available */}
-                    <p className="text-sm">
-                        Quantity: {item.quantity} | Cost: ${item.cost}
-                    </p>
-
-                    {/* Additional properties */}
-                    <p className="text-sm">Shipping Location: {item.shippingLocation}</p>
-                    <p className="text-sm">Condition: {item.condition}</p>
-                    <p className="text-sm">Tags: {item.tags.join(', ')}</p>
-                    <button onClick={() => handleDelete(item.id)} className="text-4xl font-bold ml-2">-</button>
-                    </div>
+            <div className="bg-gray-200 p-4 rounded">
+                {/* Image placeholder */}
+                <div className="mb-4">
+                <img src="/images/available-2.jpg" alt="logo" className="w-full h-full object-cover" />
                 </div>
-            </Link>
+                {/* Product details */}
+                <div>
+                <h2 className="text-2xl font-bold mb-2">{item.productName}</h2>
+                <p className="text-gray-700 mb-2">{item.description}</p>
+        
+                {/* Display quantity and cost if available */}
+                <p className="text-sm">
+                    Quantity: {item.quantity} | Cost: ${item.cost}
+                </p>
+        
+                {/* Additional properties */}
+                <p className="text-sm">Shipping Location: {item.shippingLocation}</p>
+                <p className="text-sm">Condition: {item.condition}</p>
+                <p className="text-sm">Tags: {item.tags.join(', ')}</p>
+        
+                {/* Delete Listing Button */}
+
+                <button onClick={() => handleDelete(item.id)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Delete Listing
+                </button>
+                </div>
+            </div>
+        </Link>
+   
         ))}
         </div>
     );
