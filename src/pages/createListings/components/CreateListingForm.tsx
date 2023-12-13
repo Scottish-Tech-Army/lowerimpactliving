@@ -81,7 +81,6 @@ export const CreateListingForm: React.FC<ListingFormProps> = ({ onFormInvalid, o
                             value={formData.productName}
                             onChange={handleInputChange}
                             required // HTML5 required attribute
-
                         />
                     </div>
 

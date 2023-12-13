@@ -32,28 +32,28 @@ const ListingsPage: NextPage = () => {
   })) || [];
   
   return (
-    
-    <div className="">
-        <div className="mt-5 ">
-        <Head>
-          <title>Create Listing</title>
-        </Head>
+      <div className="container mx-auto px-5">
+          <div className="mt-5 ">
+          <Head>
+            <title>Create Listing</title>
+          </Head>
 
-        <ListingsGrid items={listingsData}></ListingsGrid>
+          <ListingsGrid items={listingsData}></ListingsGrid>
 
-        {!isFormValid && (
-          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-            Please fill in all required fields.
-          </div>
-        )}
+          {!isFormValid && (
+            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+              Please fill in all required fields.
+            </div>
+          )}
 
-        {isListingCreated && (
-          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-            Listing created successfully!
-          </div>
-        )}        
+          {isListingCreated && (
+            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+              Listing created successfully!
+            </div>
+          )}        
+        </div>
       </div>
-    </div>
+
   );
 };
 
