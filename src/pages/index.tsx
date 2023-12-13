@@ -3,7 +3,7 @@ import Head from "next/head";
 import { useId, useState } from "react";
 import { AuthShowcase } from "../components/auth-showcase";
 import { api } from "../utils/api";
-
+import { useRouter } from "next/router";
 import {
   ArrowPathIcon, MagnifyingGlassIcon,
 } from '@heroicons/react/24/solid';
