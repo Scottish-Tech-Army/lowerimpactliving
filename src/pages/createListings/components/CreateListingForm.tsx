@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { api } from '../../../utils/api';
 import { useRouter } from 'next/router';
+import { clearPreviewData } from 'next/dist/server/api-utils';
 
 interface ListingFormProps {
     onFormInvalid: () => void;
@@ -14,6 +15,7 @@ export const CreateListingForm: React.FC<ListingFormProps> = ({ onFormInvalid, o
     const [formData, setFormData] = useState({
         productName: '',
         description: '',
+        condition: '',
         quantity: '',
         cost: '',
         shippingLocation: '',
@@ -32,20 +34,21 @@ export const CreateListingForm: React.FC<ListingFormProps> = ({ onFormInvalid, o
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
+        console.log(formData);
         setFormData((prevData) => ({ ...prevData, [name]: value }));
     };
 
     const handleCreateListing = async () => {
-        if (!formData.productName || !formData.description || !formData.shippingLocation) {
+        if (!formData.productName || !formData.description || !formData.condition || !formData.shippingLocation) {
             setIsFormValid(false);
             onFormInvalid(); // Call the callback function
             return;
         }
-
         try {
             const transformedFormData = {
                 productName: formData.productName,
                 description: formData.description,
+                condition: formData.condition,
                 quantity: Number(formData.quantity), // Convert to a number
                 cost: Number(formData.cost),         // Convert to a number
                 shippingLocation: formData.shippingLocation,
@@ -94,6 +97,19 @@ export const CreateListingForm: React.FC<ListingFormProps> = ({ onFormInvalid, o
                             id="description"
                             name="description"
                             value={formData.description}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+
+                    <div className="px-5 pb-5">
+                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="condition">
+                            Condition:
+                        </label>
+                        <input
+                            className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            id="condition"
+                            name="condition"
+                            value={formData.condition}
                             onChange={handleInputChange}
                         />
                     </div>

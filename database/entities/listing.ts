@@ -3,13 +3,19 @@ import { Entity } from "electrodb";
 import { v4 as uuid4 } from 'uuid';
 import { TABLE_NAME } from "../table";
 import { DB_CLIENT } from "../client";
-
+declare enum conditionEnum {
+    EXCELLENT, 
+    GOOD,
+    FAIR,
+    POOR
+    
+ }
 export interface ListingInterface {
     id: string,
-    condition: string;
     productName: string;
-    description: string;
+    description: conditionEnum;
     quantity: number; // Adjust the type accordingly
+    condition: string;
     cost: number;     // Adjust the type accordingly
     shippingLocation: string;
     tags: string[];   // Adjust the type accordingly

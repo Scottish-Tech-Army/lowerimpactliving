@@ -9,6 +9,7 @@ export const listingRouter = createTRPCRouter({
         productName: z.string(),
         description: z.string(),
         quantity: z.number(),
+        condition: z.enum(["EXCELLENT", "GOOD", "FAIR", "POOR"]),
         cost: z.number(),     
         shippingLocation: z.string(),
         tags: z.array(z.string()), 

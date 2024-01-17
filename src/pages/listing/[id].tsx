@@ -29,9 +29,7 @@ const ListingPage: NextPage = () => {
 
   return (
     <div>
-      {/* Display the image */}
-   
-      {/* Display the ListingDetails component */}
+      <header></header>
       <div>
         {singleListingData ? (
           <ListingDetails listingData={singleListingData} />
@@ -39,11 +37,11 @@ const ListingPage: NextPage = () => {
           <p>No listing data available</p>
         )}
       </div>
-      <div className="flex flex-col justify-center items-center">
+      {/* <div className="flex flex-col justify-center items-center">
         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
           <Link href="/listings">Go to Listings</Link>
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };
