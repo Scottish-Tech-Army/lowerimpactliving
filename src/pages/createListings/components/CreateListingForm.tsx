@@ -31,8 +31,8 @@ export const CreateListingForm: React.FC<ListingFormProps> = ({ onFormInvalid, o
             setHasError(true);
         }
     });
-
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
         console.log(formData);
         setFormData((prevData) => ({ ...prevData, [name]: value }));
@@ -105,13 +105,17 @@ export const CreateListingForm: React.FC<ListingFormProps> = ({ onFormInvalid, o
                         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="condition">
                             Condition:
                         </label>
-                        <input
-                            className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            id="condition"
-                            name="condition"
-                            value={formData.condition}
-                            onChange={handleInputChange}
-                        />
+
+                        <select name="condition" onChange={handleInputChange}
+                            defaultValue={"POOR"}
+                           className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                       
+                        >
+                            <option value="POOR">Poor</option>
+                            <option value="FAIR">Fair</option>
+                            <option value="GOOD">Good</option>
+                            <option value="EXCELLENT">Excellent</option>
+                        </select>
                     </div>
 
                     <div className="px-5 pb-5">
