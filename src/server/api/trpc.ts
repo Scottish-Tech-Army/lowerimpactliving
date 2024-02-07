@@ -21,6 +21,7 @@ import { type Session } from "next-auth";
 
 import { getServerAuthSession } from "../auth";
 import { organisation } from "../../../database/entities/organisation";
+import { s3Client } from "../aws/s3";
 
 type CreateContextOptions = {
   session: Session | null;
@@ -38,7 +39,8 @@ type CreateContextOptions = {
 const createInnerTRPCContext = (opts: CreateContextOptions) => {
   return {
     session: opts.session,
-    entities: { organisation }
+    entities: { organisation, listing },
+    clients: { s3Client }
   };
 };
 
@@ -66,6 +68,7 @@ export const createTRPCContext = async (opts: CreateNextContextOptions) => {
  */
 import { initTRPC, TRPCError } from "@trpc/server";
 import superjson from "superjson";
+import { listing } from "../../../database/entities/listing";
 
 const t = initTRPC.context<typeof createTRPCContext>().create({
   transformer: superjson,
@@ -102,7 +105,7 @@ export const publicProcedure = t.procedure;
  */
 const enforceUserIsAuthed = t.middleware(({ ctx, next }) => {
   // console.log(ctx);
-  
+
   if (!ctx.session || !ctx.session.user) {
     throw new TRPCError({ code: "UNAUTHORIZED" });
   }

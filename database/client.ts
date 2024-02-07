@@ -10,4 +10,3 @@ export const DB_CLIENT =
     region: env.LIL_AWS_REGION,
     endpoint: env.LIL_AWS_DYNAMODB_ENDPOINT
   });
-

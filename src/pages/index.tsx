@@ -3,7 +3,7 @@ import Head from "next/head";
 import { useId, useState } from "react";
 import { AuthShowcase } from "../components/auth-showcase";
 import { api } from "../utils/api";
-
+import { useRouter } from "next/router";
 import {
   ArrowPathIcon, MagnifyingGlassIcon,
 } from '@heroicons/react/24/solid';
@@ -13,15 +13,13 @@ const Home: NextPage = () => {
   const [emailInput, setInput] = useState('');
   const [hasError, setHasError] = useState(false);
 
-  const mutation = api.organisation.create.useMutation({
-    onError(error) {
-      setHasError(true);
-    }
-  })
 
-  function registerBusiness() {
-    mutation.mutate({ email: emailInput });
-  }
+  const router = useRouter();
+
+  const goToListings = () => {
+      router.push('/listings'); // Change this path to the actual path you want to redirect to
+  };
+
 
   return (
     <>
@@ -54,11 +52,29 @@ const Home: NextPage = () => {
           <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 ">
             <div className="py-24 px-7 text-center md:text-left">
               <h1 className="text-5xl text-dardteal font-medium">Welcome to Waste Swap</h1>
-              <p className="text-2xl pt-3 font-light text-dardteal mt-4">Aliquam laoreet aliquet pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus ut tortor nec lectus pharetra finibus.</p>
+              <p className="text-2xl pt-3 font-light text-dardteal mt-4">
+              Welcome to our Waste Swap Charity — your sustainable partner in reducing environmental impact and fostering corporate social responsibility. As a business, we understand the importance of responsible waste management and community engagement. Our Waste Swap Charity offers a unique opportunity for your organization to make a positive difference while aligning with sustainable business practices.
+              </p>
               <p className="text-2xl pt-6 font-light text-primary1">Buy | Swap | Sell</p>
             </div>
             <div className="hero-swap p-56">
             </div>
+          </div>
+        </div>
+
+        {/* Go to All Listings */}
+        <div className="bg-primary1/70 text-center shadow-xl">
+          <div className="max-w-[2220px] mx-auto">
+              <div className="relative">
+                  <button
+                    onClick={goToListings}
+                    className="bg-primary1/70 text-center shadow-xl max-w-[2220px] mx-auto overlay p-24 px-4 md:px-56 block container mx-auto"
+                  >
+                    <div className="relative">
+                      <label className="text-3xl col-span-3 p-6 font-bold text-white text-center bg-white/40">All Listings</label>
+                    </div>
+                  </button>
+              </div>
           </div>
         </div>
 
