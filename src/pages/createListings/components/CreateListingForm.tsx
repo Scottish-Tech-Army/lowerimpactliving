@@ -8,10 +8,17 @@ interface ListingFormProps {
     onListingCreated: () => void;
 }
 
+enum Conditions {
+    POOR = "POOR",
+    FAIR = "FAIR",
+    GOOD = "GOOD",
+    EXCELLENT = "EXCELLENT"
+}
+
 export const CreateListingForm: React.FC<ListingFormProps> = ({ onFormInvalid, onListingCreated }) => {
 
     const router = useRouter();
-    
+
     const [formData, setFormData] = useState({
         productName: '',
         description: '',
@@ -31,7 +38,11 @@ export const CreateListingForm: React.FC<ListingFormProps> = ({ onFormInvalid, o
             setHasError(true);
         }
     });
-    
+
+    const stringToCondition = (str: string): Conditions => {
+        return Conditions[str as keyof typeof Conditions];
+    }
+
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
         console.log(formData);
@@ -48,7 +59,7 @@ export const CreateListingForm: React.FC<ListingFormProps> = ({ onFormInvalid, o
             const transformedFormData = {
                 productName: formData.productName,
                 description: formData.description,
-                condition: formData.condition,
+                condition: stringToCondition(formData.condition),
                 quantity: Number(formData.quantity), // Convert to a number
                 cost: Number(formData.cost),         // Convert to a number
                 shippingLocation: formData.shippingLocation,
@@ -107,8 +118,8 @@ export const CreateListingForm: React.FC<ListingFormProps> = ({ onFormInvalid, o
 
                         <select name="condition" onChange={handleInputChange}
                             defaultValue={"POOR"}
-                           className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                       
+                            className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+
                         >
                             <option value="POOR">Poor</option>
                             <option value="FAIR">Fair</option>
