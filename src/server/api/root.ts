@@ -1,6 +1,8 @@
 import { listingRouter } from "./routers/listing";
 import { organisationRouter } from "./routers/organisation";
+import { s3Router } from "./routers/s3";
 import { createTRPCRouter } from "./trpc";
+
 /**
  * This is the primary router for your server.
  *
@@ -8,10 +10,9 @@ import { createTRPCRouter } from "./trpc";
  */
 export const appRouter = createTRPCRouter({
   organisation: organisationRouter,
-  listing: listingRouter
+  listing: listingRouter,
+  s3: s3Router
 });
 
 // export type definition of API
 export type AppRouter = typeof appRouter;
-
-
