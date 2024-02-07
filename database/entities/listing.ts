@@ -3,13 +3,13 @@ import { Entity } from "electrodb";
 import { v4 as uuid4 } from 'uuid';
 import { TABLE_NAME } from "../table";
 import { DB_CLIENT } from "../client";
-declare enum conditionEnum {
-    EXCELLENT, 
+export declare enum conditionEnum {
+    EXCELLENT,
     GOOD,
     FAIR,
     POOR
-    
- }
+
+}
 export interface ListingInterface {
     id: string,
     productName: string;
@@ -19,8 +19,8 @@ export interface ListingInterface {
     cost: number;     // Adjust the type accordingly
     shippingLocation: string;
     tags: string[];   // Adjust the type accordingly
-  }
-  
+}
+
 
 export const listing = new Entity({
     model: {
@@ -35,7 +35,7 @@ export const listing = new Entity({
             required: true
         },
         entryType: {
-            type: 'string', 
+            type: 'string',
             default: 'LISTING'
         },
         productName: {
@@ -44,7 +44,7 @@ export const listing = new Entity({
         },
         description: {
             type: 'string',
-            required: true 
+            required: true
         },
         quantity: {
             type: 'number'
@@ -77,7 +77,7 @@ export const listing = new Entity({
         }
     }
 },
-{
-    client: DB_CLIENT, table: TABLE_NAME,
-    //  logger 
-});
+    {
+        client: DB_CLIENT, table: TABLE_NAME,
+        //  logger 
+    });

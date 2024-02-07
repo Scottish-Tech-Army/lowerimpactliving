@@ -2,18 +2,13 @@ import React, { useState } from 'react';
 import { api } from '../../../utils/api';
 import { useRouter } from 'next/router';
 import { clearPreviewData } from 'next/dist/server/api-utils';
+import { conditionEnum } from '../../../../database/entities/listing'
 
 interface ListingFormProps {
     onFormInvalid: () => void;
     onListingCreated: () => void;
 }
 
-enum Conditions {
-    POOR = "POOR",
-    FAIR = "FAIR",
-    GOOD = "GOOD",
-    EXCELLENT = "EXCELLENT"
-}
 
 export const CreateListingForm: React.FC<ListingFormProps> = ({ onFormInvalid, onListingCreated }) => {
 
@@ -39,8 +34,8 @@ export const CreateListingForm: React.FC<ListingFormProps> = ({ onFormInvalid, o
         }
     });
 
-    const stringToCondition = (str: string): Conditions => {
-        return Conditions[str as keyof typeof Conditions];
+    const stringToCondition = (str: string): conditionEnum => {
+        return conditionEnum[str as keyof typeof conditionEnum];
     }
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
