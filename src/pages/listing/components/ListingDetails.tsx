@@ -1,4 +1,5 @@
 
+import Link from "next/link";
 import { ListingInterface } from "../../../../database/entities/listing";
 // id: string,
 // con
