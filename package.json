@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.226.0",
+    "@aws-sdk/client-s3": "^3.498.0",
     "@aws-sdk/lib-dynamodb": "^3.226.0",
     "@emotion/react": "^11.10.5",
     "@heroicons/react": "^2.0.13",
