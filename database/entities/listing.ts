@@ -15,7 +15,7 @@ export interface ListingInterface {
     productName: string;
     description: string;
     quantity: number; // Adjust the type accordingly
-    // condition: conditionEnum;
+    condition: string;
     cost: number;     // Adjust the type accordingly
     shippingLocation: string;
     tags: string[];   // Adjust the type accordingly
