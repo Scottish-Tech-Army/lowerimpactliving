@@ -1,9 +1,9 @@
 import { NextPage } from 'next';
 import Head from 'next/head';
 import React, { useEffect, useState } from 'react';
-import { CreateListingForm } from './components/CreateListingForm';
 import { api } from '../../utils/api';
 import { ListingInterface } from '../../../database/entities/listing';
+import { CreateListingForm } from '../../components/CreateListingForm';
 
 
 const ListingPage: NextPage = () => {

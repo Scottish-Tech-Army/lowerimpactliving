@@ -48,7 +48,7 @@ const ListingsGrid: React.FC<ListingGridProps> = ({ items }) => {
 
             {/* Create Listing Button */}
 
-            {items.map((item) => (
+            {items?.map((item) => (
                 <Link key={item.id} href={`/listing/${item.id}`} passHref>
                     <article className="bg-gray-200 overflow-hidden rounded-lg shadow-lg">
 

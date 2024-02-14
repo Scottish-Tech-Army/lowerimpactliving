@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import { api } from '../../../utils/api';
 import { useRouter } from 'next/router';
-import { clearPreviewData } from 'next/dist/server/api-utils';
+import { api } from '../utils/api';
 
 interface ListingFormProps {
     onFormInvalid: () => void;
     onListingCreated: () => void;
 }
-
 
 export const CreateListingForm: React.FC<ListingFormProps> = ({ onFormInvalid, onListingCreated }) => {
 
