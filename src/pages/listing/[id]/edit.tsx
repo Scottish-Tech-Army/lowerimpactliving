@@ -16,7 +16,6 @@ const EditListingPage = () => {
         quantity: item.quantity || 0,
         cost: item.cost || 0,
         shippingLocation: item.shippingLocation || '',
-        condition: item.condition || '',
         tags: item.tags || [],
     }
         : undefined;
