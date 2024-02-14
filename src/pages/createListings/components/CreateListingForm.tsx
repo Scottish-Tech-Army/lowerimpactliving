@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { api } from '../../../utils/api';
 import { useRouter } from 'next/router';
 import { clearPreviewData } from 'next/dist/server/api-utils';
-import { conditionEnum } from '../../../../database/entities/listing'
 
 interface ListingFormProps {
     onFormInvalid: () => void;
@@ -17,7 +16,6 @@ export const CreateListingForm: React.FC<ListingFormProps> = ({ onFormInvalid, o
     const [formData, setFormData] = useState({
         productName: '',
         description: '',
-        condition: '',
         quantity: '',
         cost: '',
         shippingLocation: '',
@@ -34,9 +32,6 @@ export const CreateListingForm: React.FC<ListingFormProps> = ({ onFormInvalid, o
         }
     });
 
-    const stringToCondition = (str: string): conditionEnum => {
-        return conditionEnum[str as keyof typeof conditionEnum];
-    }
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
@@ -45,7 +40,7 @@ export const CreateListingForm: React.FC<ListingFormProps> = ({ onFormInvalid, o
     };
 
     const handleCreateListing = async () => {
-        if (!formData.productName || !formData.description || !formData.condition || !formData.shippingLocation) {
+        if (!formData.productName || !formData.description  || !formData.shippingLocation) {
             setIsFormValid(false);
             onFormInvalid(); // Call the callback function
             return;
@@ -54,7 +49,6 @@ export const CreateListingForm: React.FC<ListingFormProps> = ({ onFormInvalid, o
             const transformedFormData = {
                 productName: formData.productName,
                 description: formData.description,
-                condition: stringToCondition(formData.condition),
                 quantity: Number(formData.quantity), // Convert to a number
                 cost: Number(formData.cost),         // Convert to a number
                 shippingLocation: formData.shippingLocation,

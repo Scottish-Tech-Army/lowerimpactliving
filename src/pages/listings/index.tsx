@@ -2,15 +2,12 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 import React, { useEffect, useState } from 'react';
 import { api } from '../../utils/api';
-import { ListingInterface, conditionEnum } from '../../../database/entities/listing';
+import { ListingInterface } from '../../../database/entities/listing';
 import ListingsGrid from './components/ListingsGrid';
 
 
 const ListingsPage: NextPage = () => {
 
-  const stringToCondition = (str: string): conditionEnum => {
-    return conditionEnum[str as keyof typeof conditionEnum];
-  }
 
   const [isFormValid, setIsFormValid] = useState(true);
   const [isListingCreated, setIsListingCreated] = useState(false);
@@ -31,7 +28,6 @@ const ListingsPage: NextPage = () => {
     quantity: item.quantity || 0, // Example default value, adjust as needed
     cost: item.cost || 0, // Example default value, adjust as needed
     shippingLocation: item.shippingLocation || '',
-    condition: stringToCondition(item.condition || ''), // Example default value, adjust as needed
     tags: item.tags || [], // Example default value, adjust as needed
   })) || [];
 

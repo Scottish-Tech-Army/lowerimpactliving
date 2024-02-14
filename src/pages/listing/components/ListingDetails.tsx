@@ -40,12 +40,12 @@ const ListingDetails = ({ listingData }: { listingData: ListingInterface }) => {
                 </label>
                 <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" value={listingData.cost} disabled readOnly/>
               </div>
-              <div className="mb-4">
+              {/* <div className="mb-4">
                 <label className="block text-gray-700 text-sm font-bold mb-2">
                   Condition
                 </label>
                 <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" value={listingData.condition} disabled readOnly/>
-              </div>
+              </div> */}
               <div className="mb-4">
                 <label className="block text-gray-700 text-sm font-bold mb-2">
                   Shipping Location

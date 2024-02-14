@@ -27,7 +27,6 @@ const ListingPage: NextPage = () => {
     quantity: item.quantity || 0, // Example default value, adjust as needed
     cost: item.cost || 0, // Example default value, adjust as needed
     shippingLocation: item.shippingLocation || '',
-    condition: item.condition || '', // Example default value, adjust as needed
     tags: item.tags || [], // Example default value, adjust as needed
   })) || [];
   
